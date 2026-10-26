@@ -1,0 +1,34 @@
+# Minato Wealth - Market Picture data source test.
+# Manual only. Fetches every series in instruments.json once, writes a report to
+# test-results/ and the job summary, and commits the report so it can be read from
+# raw.githubusercontent.com. Publishes nothing else.
+name: Data source test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install optional fallback (yfinance)
+        run: pip install --quiet yfinance || echo "yfinance not installed - standard-library route only"
+
+      - name: Fetch every series and report
+        run: python3 fetch_test.py
+
+      - name: Commit the report
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add test-results/
+          if git diff --cached --quiet; then echo "report unchanged"; exit 0; fi
+          git commit -m "Data source test - $(date -u +%Y-%m-%d)"
+          git push

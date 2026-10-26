@@ -1,0 +1,54 @@
+{
+  "_note": "Market Picture instrument list v1, agreed 26 Oct 2026. London-listed sterling ETF lines as free daily proxies for indices. Tickers researched, not yet test-fetched. 'yahoo' is the Yahoo Finance symbol; 'dist' true means a distributing share class (price drops on ex-dividend dates; adjust for total return).",
+  "etfs": [
+    {"layer": "1 Global", "id": "world", "name": "MSCI World", "ticker": "SWDA", "yahoo": "SWDA.L", "isin": "IE00B4L5Y983", "dist": false},
+    {"layer": "1 Global", "id": "acwi", "name": "MSCI ACWI", "ticker": "SSAC", "yahoo": "SSAC.L", "isin": "IE00B6R52259", "dist": false},
+    {"layer": "1 Global", "id": "em", "name": "Emerging markets (MSCI EM IMI)", "ticker": "EMIM", "yahoo": "EMIM.L", "isin": "IE00BKM4GZ66", "dist": false},
+
+    {"layer": "2 Regions", "id": "uk100", "name": "FTSE 100", "ticker": "ISF", "yahoo": "ISF.L", "isin": "IE0005042456", "dist": true},
+    {"layer": "2 Regions", "id": "ukall", "name": "FTSE All-Share", "ticker": "FTAL", "yahoo": "FTAL.L", "isin": "IE00B7452L46", "dist": false},
+    {"layer": "2 Regions", "id": "us", "name": "S&P 500", "ticker": "CSP1", "yahoo": "CSP1.L", "isin": "IE00B5BMR087", "dist": false},
+    {"layer": "2 Regions", "id": "europe", "name": "Europe ex-UK", "ticker": "VERX", "yahoo": "VERX.L", "isin": "IE00BKX55S42", "dist": true},
+    {"layer": "2 Regions", "id": "japan", "name": "Japan", "ticker": "SJPA", "yahoo": "SJPA.L", "isin": "IE00B4L5YX21", "dist": false},
+    {"layer": "2 Regions", "id": "pacxj", "name": "Pacific ex-Japan (developed)", "ticker": "CPJ1", "yahoo": "CPJ1.L", "isin": "IE00B52MJY50", "dist": false},
+
+    {"layer": "3 UK detail", "id": "uk250", "name": "FTSE 250", "ticker": "MIDD", "yahoo": "MIDD.L", "isin": "IE00B00FV128", "dist": true},
+
+    {"layer": "4 Style and size", "id": "value", "name": "World Value", "ticker": "IWFV", "yahoo": "IWFV.L", "isin": "IE00BP3QZB59", "dist": false},
+    {"layer": "4 Style and size", "id": "quality", "name": "World Quality", "ticker": "IWFQ", "yahoo": "IWFQ.L", "isin": "IE00BP3QZ601", "dist": false},
+    {"layer": "4 Style and size", "id": "momentum", "name": "World Momentum", "ticker": "IWFM", "yahoo": "IWFM.L", "isin": "IE00BP3QZ825", "dist": false},
+    {"layer": "4 Style and size", "id": "smallcap", "name": "World Small Cap", "ticker": "WLDS", "yahoo": "WLDS.L", "isin": "IE00BF4RFH31", "dist": false},
+    {"layer": "4 Style and size", "id": "nasdaq", "name": "Nasdaq 100 (growth stand-in, candidate)", "ticker": "CNX1", "yahoo": "CNX1.L", "isin": "IE00B53SZB19", "dist": false},
+
+    {"layer": "5 Sectors", "id": "s_tech", "name": "World Information Technology", "ticker": "XXTW", "yahoo": "XXTW.L", "isin": "IE00BM67HT60", "dist": false},
+    {"layer": "5 Sectors", "id": "s_health", "name": "World Health Care", "ticker": "XWHS", "yahoo": "XWHS.L", "isin": "IE00BM67HK77", "dist": false},
+    {"layer": "5 Sectors", "id": "s_energy", "name": "World Energy", "ticker": "XWES", "yahoo": "XWES.L", "isin": "IE00BM67HM91", "dist": false},
+    {"layer": "5 Sectors", "id": "s_fin", "name": "World Financials", "ticker": "XWFS", "yahoo": "XWFS.L", "isin": "IE00BM67HL84", "dist": false},
+    {"layer": "5 Sectors", "id": "s_ind", "name": "World Industrials", "ticker": "XWIS", "yahoo": "XWIS.L", "isin": "IE00BM67HV82", "dist": false},
+    {"layer": "5 Sectors", "id": "s_staples", "name": "World Consumer Staples", "ticker": "XWCS", "yahoo": "XWCS.L", "isin": "IE00BM67HN09", "dist": false},
+    {"layer": "5 Sectors", "id": "s_discr", "name": "World Consumer Discretionary", "ticker": "XWDS", "yahoo": "XWDS.L", "isin": "IE00BM67HP23", "dist": false},
+    {"layer": "5 Sectors", "id": "s_util", "name": "World Utilities", "ticker": "XWUS", "yahoo": "XWUS.L", "isin": "IE00BM67HQ30", "dist": false},
+    {"layer": "5 Sectors", "id": "s_mat", "name": "World Materials", "ticker": "XSMW", "yahoo": "XSMW.L", "isin": "IE00BM67HS53", "dist": false},
+    {"layer": "5 Sectors", "id": "s_comm", "name": "World Communication Services", "ticker": "XSSW", "yahoo": "XSSW.L", "isin": "IE00BM67HR47", "dist": false},
+
+    {"layer": "6 Bonds", "id": "gilt_short", "name": "UK gilts 0-5 years", "ticker": "IGLS", "yahoo": "IGLS.L", "isin": "IE00B4WXJK79", "dist": true},
+    {"layer": "6 Bonds", "id": "gilt_all", "name": "UK gilts all maturities", "ticker": "IGLT", "yahoo": "IGLT.L", "isin": "IE00B1FZSB30", "dist": true},
+    {"layer": "6 Bonds", "id": "gilt_long", "name": "UK gilts over 15 years", "ticker": "GLTL", "yahoo": "GLTL.L", "isin": "IE00B6YX5L24", "dist": true},
+    {"layer": "6 Bonds", "id": "gilt_il", "name": "UK index-linked gilts", "ticker": "INXG", "yahoo": "INXG.L", "isin": "IE00B1FZSD53", "dist": true},
+    {"layer": "6 Bonds", "id": "corp_gbp", "name": "Sterling corporate bonds", "ticker": "SLXX", "yahoo": "SLXX.L", "isin": "IE00B00FV011", "dist": true},
+    {"layer": "6 Bonds", "id": "hy_global", "name": "Global high yield (GBP hedged)", "ticker": "GHYS", "yahoo": "GHYS.L", "isin": "IE00B8KQFS66", "dist": true},
+    {"layer": "6 Bonds", "id": "em_debt", "name": "EM debt, hard currency (GBP hedged)", "ticker": "EMHG", "yahoo": "EMHG.L", "isin": "IE00BDFGJ734", "dist": true},
+    {"layer": "6 Bonds", "id": "agg_global", "name": "Global aggregate bonds (GBP hedged)", "ticker": "AGBP", "yahoo": "AGBP.L", "isin": "IE00BF540Y54", "dist": true},
+
+    {"layer": "8 Real assets", "id": "property", "name": "Developed markets property", "ticker": "IWDP", "yahoo": "IWDP.L", "isin": "IE00B1FZS350", "dist": true},
+    {"layer": "8 Real assets", "id": "goldminers", "name": "Gold miners", "ticker": "GDGB", "yahoo": "GDGB.L", "isin": "IE00BQQP9F84", "dist": false}
+  ],
+  "rates": [
+    {"layer": "7 Rates", "id": "bank_rate", "name": "Bank Rate", "source": "boe", "code": "IUDBEDR", "confidence": "high"},
+    {"layer": "7 Rates", "id": "gilt_10y", "name": "10-year gilt nominal par yield", "source": "boe", "code": "IUDMNPY", "confidence": "medium"},
+    {"layer": "7 Rates", "id": "gilt_5y", "name": "5-year gilt nominal par yield", "source": "boe", "code": "IUDSNPY", "confidence": "medium"},
+    {"layer": "7 Rates", "id": "gilt_20y", "name": "20-year gilt nominal par yield", "source": "boe", "code": "IUDLNPY", "confidence": "medium"},
+    {"layer": "7 Rates", "id": "us_10y", "name": "US 10-year Treasury yield", "source": "fred", "code": "DGS10", "confidence": "high"},
+    {"layer": "7 Rates", "id": "us_2y", "name": "US 2-year Treasury yield", "source": "fred", "code": "DGS2", "confidence": "high"}
+  ]
+}
