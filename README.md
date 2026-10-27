@@ -43,4 +43,27 @@ Known behaviour: Yahoo sometimes leaves a day's close empty (26 Oct 2026 for eve
 report lists such weekdays; because each run re-reads full history, the day is added if Yahoo fills it.
 ETF rows dated today are skipped before 17:00 London so an intraday price is never frozen into history.
 
-Nothing is published yet. The dashboard follows once the history is running.
+## Stage 3 (27 Oct 2026): the daily view
+- `build_view.py` - reads the stored history (fetches nothing; standard library only) and builds the
+  view: returns over 1 day, 1 week, 1 month, 3 months, year to date and 1 year for every series, by
+  layer, all measured to one as-at date (the latest date held by at least half the ETF lines).
+  `--as-of YYYY-MM-DD` rebuilds the view as it would have looked on any past date.
+  - **ETFs: total return in sterling**, computed from the stored close plus dividends (reinvested on
+    the ex-date), never from Yahoo's adjusted close - which on 27 Oct 2026 missed most dividends on
+    ISF, MIDD and IWDP (checked against CUKX, the accumulating FTSE 100 line: within 0.1-0.5 points).
+  - **Rates:** level, and change in basis points over the same periods.
+  - **Relationships:** pairs listed in `instruments.json` under `relationships` - relative total
+    return for market pairs, spread and its change for rate pairs. Edit the list freely.
+  - **Bad prices:** a close more than 20% from the median of the 11 days around it, confirmed by later
+    closes, is left out of the figures and listed on the page (the stored history is not changed).
+    A jump that size in the last two days cannot be confirmed yet: that line is blanked and marked check.
+    Example: Fri 24 Oct 2025, the trading day before the clock change, Yahoo stored 12 lines in USD
+    (about 1.34x) and left most others empty - the same clock-change fault as 26 Oct 2026.
+- `view_template.html` - the page; `/*__DATA__*/` is the injection marker (same pattern as
+  market-observatory, same colours). Light and dark mode; works at phone width.
+- `view/index.html` (generated; do not edit) and `view/view.json` (every figure with its dates).
+- The daily workflow builds the view after the history and commits both. If the view fails, the
+  history is still committed and the job fails loudly.
+
+Nothing is published: the view is committed to this repository only. Publishing (GitHub Pages) is a
+decision still to be taken. To read it now: open `view/index.html` from a local clone in a browser.

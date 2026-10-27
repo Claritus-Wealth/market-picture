@@ -53,5 +53,22 @@
     {"layer": "7 Rates", "id": "real_20y", "name": "20-year real gilt yield (zero coupon)", "source": "boe", "code": "IUDLRZC", "confidence": "high"},
     {"layer": "7 Rates", "id": "us_10y", "name": "US 10-year Treasury yield", "source": "treasury", "treasury_col": "10 Yr", "code": "DGS10", "confidence": "high"},
     {"layer": "7 Rates", "id": "us_2y", "name": "US 2-year Treasury yield", "source": "treasury", "treasury_col": "2 Yr", "code": "DGS2", "confidence": "high"}
+  ],
+  "_relationships_note": "Stage 3 (27 Oct 2026): pairs shown in the daily view. ETF pairs are relative total return, (1 + a) / (1 + b) - 1; rate pairs are the spread a - b in percentage points and its change in basis points. Edit freely; ids refer to the lists above.",
+  "relationships": [
+    {"name": "UK mid caps vs UK large caps", "a": "uk250", "b": "uk100"},
+    {"name": "UK vs world", "a": "ukall", "b": "world"},
+    {"name": "US vs world", "a": "us", "b": "world"},
+    {"name": "Emerging vs developed", "a": "em", "b": "world"},
+    {"name": "Small caps vs world", "a": "smallcap", "b": "world"},
+    {"name": "Value vs quality", "a": "value", "b": "quality"},
+    {"name": "Momentum vs world", "a": "momentum", "b": "world"},
+    {"name": "Long gilts vs short gilts", "a": "gilt_long", "b": "gilt_short"},
+    {"name": "Index-linked vs conventional gilts", "a": "gilt_il", "b": "gilt_all"},
+    {"name": "Sterling credit vs gilts", "a": "corp_gbp", "b": "gilt_all"},
+    {"name": "Global high yield vs global aggregate", "a": "hy_global", "b": "agg_global"},
+    {"name": "US curve: 10-year minus 2-year", "a": "us_10y", "b": "us_2y"},
+    {"name": "Gilt curve: 20-year minus 5-year", "a": "gilt_20y", "b": "gilt_5y"},
+    {"name": "10-year gilt minus 10-year Treasury", "a": "gilt_10y", "b": "us_10y"}
   ]
 }

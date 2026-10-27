@@ -1,8 +1,10 @@
 # Minato Wealth - Market Picture daily build.
 # Weekdays after the London close (and on demand): fetches every series in
-# instruments.json, appends what is new to the history under data/, and commits it.
+# instruments.json, appends what is new to the history under data/, builds the daily
+# view (view/index.html) from that history, and commits both.
 # The history is committed before the job reports failure, so a bad day never loses
-# the series that did arrive. Publishes nothing else.
+# the series that did arrive; a broken view never stops the history being committed.
+# Publishes nothing: the view is committed to the repository only (no Pages).
 name: Daily build
 
 on:
@@ -37,11 +39,17 @@ jobs:
         id: build
         run: python3 build_daily.py
 
+      - name: Build the daily view from the history
+        id: view
+        run: |
+          if python3 build_view.py; then echo "failed=0" >> "$GITHUB_OUTPUT"
+          else echo "failed=1" >> "$GITHUB_OUTPUT"; fi
+
       - name: Commit the history
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ view/
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
           git commit -m "Daily build - $(TZ=Europe/London date +%Y-%m-%d)"
           git pull --rebase
@@ -51,4 +59,10 @@ jobs:
         if: steps.build.outputs.failed != '0'
         run: |
           echo "::error::${{ steps.build.outputs.failed }} series failed - see data/report.md"
+          exit 1
+
+      - name: Fail loudly if the view did not build
+        if: always() && steps.view.outputs.failed == '1'
+        run: |
+          echo "::error::build_view.py failed - the history was committed, the view was not updated"
           exit 1

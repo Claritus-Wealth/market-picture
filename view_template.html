@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Market Picture</title>
+<style>
+  :root{
+    color-scheme: light;
+    --navy:#1B3664;
+    --surface-1:#fcfcfb; --page:#f9f9f7; --neutral:#f0efec;
+    --ink-1:#0b0b0b; --ink-2:#52514e; --ink-3:#898781;
+    --grid:#e1e0d9; --border:rgba(11,11,11,.10);
+    --pos:#2a78d6; --neg:#e34948; --warn-bg:#fdf3dc; --warn-ink:#7a5200;
+    --chip-on:#1B3664; --chip-on-ink:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --surface-1:#1a1a19; --page:#0d0d0d; --neutral:#383835;
+      --ink-1:#ffffff; --ink-2:#c3c2b7; --ink-3:#898781;
+      --grid:#2c2c2a; --border:rgba(255,255,255,.10);
+      --pos:#3987e5; --neg:#e66767; --warn-bg:#3a2e12; --warn-ink:#f2c45a;
+      --chip-on:#4a6698; --chip-on-ink:#ffffff;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --surface-1:#1a1a19; --page:#0d0d0d; --neutral:#383835;
+    --ink-1:#ffffff; --ink-2:#c3c2b7; --ink-3:#898781;
+    --grid:#2c2c2a; --border:rgba(255,255,255,.10);
+    --pos:#3987e5; --neg:#e66767; --warn-bg:#3a2e12; --warn-ink:#f2c45a;
+    --chip-on:#4a6698; --chip-on-ink:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink-1);
+    font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;}
+  header.masthead{background:var(--navy);color:#fff;padding:22px 28px 18px;}
+  header.masthead h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:26px;letter-spacing:.2px}
+  header.masthead .sub{color:#c7d2e4;font-size:13.5px;margin-top:4px}
+  header.masthead .sub b{color:#fff;font-weight:600}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 16px 40px}
+  .notice{background:var(--warn-bg);color:var(--warn-ink);border-radius:10px;padding:10px 14px;margin:0 0 12px;font-size:13.5px}
+  .status{font-size:13.5px;color:var(--ink-2);margin:0 0 16px}
+  .status b{color:var(--ink-1)}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:19px;margin:26px 0 4px}
+  .lede{color:var(--ink-2);font-size:13.5px;margin:0 0 10px;max-width:820px}
+  /* controls */
+  .filters{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin:6px 0 14px}
+  .fgroup{display:flex;gap:4px;align-items:center;background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:4px;flex-wrap:wrap}
+  .fgroup .lbl{font-size:12px;color:var(--ink-3);padding:0 6px 0 8px}
+  button.seg{border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13px;padding:5px 11px;border-radius:7px;cursor:pointer;white-space:nowrap}
+  button.seg:hover{background:rgba(128,128,128,.10)}
+  button.seg[aria-pressed="true"]{background:var(--chip-on);color:var(--chip-on-ink);font-weight:600}
+  /* highlights */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:0 0 6px}
+  .tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+  .tile h3{margin:0 0 6px;font-size:12.5px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.4px}
+  .tile ol{margin:0;padding:0;list-style:none}
+  .tile li{display:flex;justify-content:space-between;gap:10px;padding:3px 0;font-size:14px;border-top:1px solid var(--grid)}
+  .tile li:first-child{border-top:0}
+  .tile li .v{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+  /* tables */
+  .tablewrap{overflow-x:auto;background:var(--surface-1);border:1px solid var(--border);border-radius:12px}
+  table{border-collapse:separate;border-spacing:2px;width:100%;font-size:13.5px;min-width:640px}
+  th,td{padding:5px 8px;text-align:right;white-space:nowrap}
+  th{font-size:12px;font-weight:600;color:var(--ink-3);position:sticky;top:0;background:var(--surface-1)}
+  th.name,td.name{text-align:left;white-space:normal;min-width:190px;position:sticky;left:0;background:var(--surface-1);z-index:1}
+  th button{all:unset;cursor:pointer;padding:2px 4px;border-radius:5px}
+  th button:hover{background:rgba(128,128,128,.12)}
+  th button:focus-visible{outline:2px solid var(--pos)}
+  th[aria-sort="descending"] button::after{content:" ▼"}
+  th[aria-sort="ascending"] button::after{content:" ▲"}
+  tr.layer td{text-align:left;font-weight:600;color:var(--ink-2);padding-top:12px;font-size:12.5px;background:var(--surface-1)}
+  td.c{font-variant-numeric:tabular-nums;border-radius:4px;color:var(--ink-1);min-width:62px}
+  td.c.na{color:var(--ink-3)}
+  td.lvl{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+  .tk{color:var(--ink-3);font-size:12px;margin-left:6px}
+  .tag{display:inline-block;font-size:11px;color:var(--ink-3);border:1px solid var(--border);border-radius:5px;padding:0 5px;margin-left:6px}
+  .chk{display:inline-block;font-size:11px;font-weight:600;color:var(--warn-ink);background:var(--warn-bg);border-radius:5px;padding:0 6px;margin-left:6px}
+  .flag{display:block;font-size:12px;color:var(--warn-ink);margin-top:2px}
+  .key{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2);margin:8px 0 0}
+  .key .bar{width:160px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--neg),var(--neutral),var(--pos))}
+  details{margin-top:26px;font-size:13.5px;color:var(--ink-2)}
+  details summary{cursor:pointer;color:var(--ink-1);font-weight:600}
+  details li{margin:3px 0}
+  footer{margin-top:28px;font-size:12px;color:var(--ink-3)}
+  @media (max-width:600px){header.masthead{padding:18px 16px 14px}header.masthead h1{font-size:22px}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <h1>Market Picture</h1>
+  <div class="sub" id="sub"></div>
+</header>
+<div class="wrap">
+  <div id="notices"></div>
+  <p class="status" id="status"></p>
+
+  <div class="filters">
+    <div class="fgroup" role="group" aria-label="Period for highlights">
+      <span class="lbl">Highlights over</span>
+      <span id="hl-buttons"></span>
+    </div>
+  </div>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Markets</h2>
+  <p class="lede">Total return in sterling, in percent: price change plus dividends reinvested on the ex-dividend date, so distributing and accumulating lines compare fairly. Each figure runs from the last close on or before the period start to the as-at date. Click a period heading to rank every line by it; click again to reverse, a third time to return to layers.</p>
+  <div class="tablewrap"><table id="etf"></table></div>
+  <div class="key"><span>fell</span><span class="bar" aria-hidden="true"></span><span>rose</span><span style="color:var(--ink-3)">· shade scales with the size of the move for that period; the sign is always printed</span></div>
+
+  <h2>Rates</h2>
+  <p class="lede">Yield in percent; changes in basis points (100 bp = 1 percentage point). Blue means the yield rose, which is a fall in bond prices.</p>
+  <div class="tablewrap"><table id="rates"></table></div>
+
+  <h2>Relationships</h2>
+  <p class="lede">How one part of the market did against another. Market pairs show relative total return (positive: the first did better). Rate pairs show the spread and how it moved, in basis points.</p>
+  <div class="tablewrap"><table id="rel-etf"></table></div>
+  <div class="tablewrap" style="margin-top:12px"><table id="rel-rate"></table></div>
+
+  <details id="method">
+    <summary>Method, sources and what was left out</summary>
+    <ul id="method-list"></ul>
+  </details>
+  <footer id="foot"></footer>
+</div>
+<script>
+const DATA = /*__DATA__*/;
+const H = DATA.horizons;
+const LABEL = {'1d':'1 day','1w':'1 week','1m':'1 month','3m':'3 months','ytd':'Year to date','1y':'1 year'};
+const SHORT = {'1d':'1d','1w':'1w','1m':'1m','3m':'3m','ytd':'YTD','1y':'1y'};
+// colour scale: a move this size or larger gets the full shade
+const SCALE_PCT = {'1d':1.5,'1w':3,'1m':5,'3m':8,'ytd':15,'1y':15};
+const SCALE_BP = {'1d':8,'1w':20,'1m':30,'3m':50,'ytd':100,'1y':100};
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DAY = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const d8 = iso => { const [y,m,d] = iso.split('-').map(Number); return `${d} ${MON[m-1]} ${y}`; };
+const dLong = iso => { const [y,m,d] = iso.split('-').map(Number); return `${DAY[new Date(Date.UTC(y,m-1,d)).getUTCDay()]} ${d} ${MON[m-1]} ${y}`; };
+const minus = s => s.replace('-', '−');
+// two decimals for the short periods, one for the long ones: one precision per column
+const fmtPct = (v, h) => minus((v > 0 ? '+' : '') + v.toFixed(h === 'ytd' || h === '1y' ? 1 : 2));
+const fmtBp = v => minus((v > 0 ? '+' : '') + (Math.abs(v) < 10 ? v.toFixed(1) : v.toFixed(0)));
+
+function shade(v, h, kind){
+  const s = (kind === 'etf' ? SCALE_PCT : SCALE_BP)[h];
+  const p = Math.round(Math.min(Math.abs(v) / s, 1) * 58);
+  if (v === 0 || p === 0) return 'var(--neutral)';
+  return `color-mix(in oklab, var(${v > 0 ? '--pos' : '--neg'}) ${p}%, var(--neutral))`;
+}
+function cell(c, h, kind, who){
+  if (!c) return `<td class="c na" title="${esc(who)}: not enough history for ${LABEL[h].toLowerCase()}">–</td>`;
+  const txt = kind === 'etf' ? fmtPct(c.v, h) : fmtBp(c.v);
+  const unit = kind === 'etf' ? '%' : ' bp';
+  return `<td class="c" style="background:${shade(c.v, h, kind)}" title="${esc(who)} · ${LABEL[h]}: ${txt}${unit} · ${d8(c.from)} to ${d8(DATA.as_of)}">${txt}</td>`;
+}
+function nameCell(r, showLayer){
+  const flags = r.flags.map(f => `<span class="flag">${esc(f)}</span>`).join('');
+  return `<td class="name">${esc(r.name)}<span class="tk">${esc(r.ticker)}</span>`
+    + (r.dist ? '<span class="tag" title="Distributing line: dividends added back">dist</span>' : '')
+    + (showLayer ? `<span class="tag">${esc(r.layer.replace(/^\d+ /,''))}</span>` : '')
+    + (r.status === 'check' ? '<span class="chk">check</span>' : '') + flags + '</td>';
+}
+
+// header + status
+document.getElementById('sub').innerHTML =
+  `Daily view · as at <b>${dLong(DATA.as_of)}</b> · London closes · internal: ETF proxies for indices, not for client use`;
+const n = DATA.counts, total = DATA.rows.length;
+document.getElementById('status').innerHTML =
+  `<b>${total} series</b> · ${n.ok} ok · ${n.check ? `<b>${n.check} to check</b>` : '0 to check'} · view built ${esc(DATA.built)}`
+  + (DATA.build_run ? ` from the data run of ${esc(DATA.build_run)}` : '');
+const notes = [];
+if (DATA.pending_days.length)
+  notes.push(`No London closes are stored yet for ${DATA.pending_days.map(dLong).join(', ')}: the price source has none for that day. Every figure is as at ${dLong(DATA.as_of)}; the day is added automatically if the source fills it.`);
+const yrStart = DATA.starts['1y'];
+const byDay = {};
+DATA.bad_prints.forEach(b => b.dates.filter(d => d >= yrStart).forEach(d => (byDay[d] = byDay[d] || []).push(b.ticker)));
+const recent = Object.keys(byDay).sort().map(d => `${d8(d)} on ${byDay[d].length} line${byDay[d].length > 1 ? 's' : ''}`);
+if (recent.length)
+  notes.push(`Bad prices left out of the figures inside the last year: ${recent.join('; ')} (the source stored the wrong currency for the day; lines listed under Method).`);
+document.getElementById('notices').innerHTML = notes.map(t => `<div class="notice">${t}</div>`).join('');
+
+// markets table
+const etfs = DATA.rows.filter(r => r.kind === 'etf');
+let sortH = null, sortDir = -1;
+function headRow(cols, sortable){
+  return '<thead><tr><th class="name" scope="col">Series</th>' + cols.map(h =>
+    sortable ? `<th scope="col" aria-sort="${sortH === h ? (sortDir < 0 ? 'descending' : 'ascending') : 'none'}"><button data-h="${h}">${SHORT[h]}</button></th>`
+             : `<th scope="col">${h in SHORT ? SHORT[h] : h}</th>`).join('') + '</tr></thead>';
+}
+function drawEtf(){
+  let body = '';
+  if (!sortH){
+    let layer = null;
+    for (const r of etfs){
+      if (r.layer !== layer){ layer = r.layer; body += `<tr class="layer"><td colspan="${H.length + 1}">${esc(layer.replace(/^\d+ /,''))}</td></tr>`; }
+      body += '<tr>' + nameCell(r, false) + H.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>';
+    }
+  } else {
+    const val = r => r.cells[sortH] ? r.cells[sortH].v : null;
+    const list = etfs.slice().sort((a, b) => (val(a) === null) - (val(b) === null) || sortDir * ((val(a) ?? 0) - (val(b) ?? 0)));
+    for (const r of list) body += '<tr>' + nameCell(r, true) + H.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>';
+  }
+  const t = document.getElementById('etf');
+  t.innerHTML = '<caption class="sr" style="position:absolute;left:-9999px">Total return by period, percent</caption>' + headRow(H, true) + '<tbody>' + body + '</tbody>';
+  t.querySelectorAll('th button').forEach(b => b.onclick = () => {
+    const h = b.dataset.h;
+    if (sortH !== h){ sortH = h; sortDir = -1; } else if (sortDir < 0){ sortDir = 1; } else { sortH = null; }
+    drawEtf();
+    document.querySelector(`#etf th button[data-h="${h}"]`)?.focus();
+  });
+}
+drawEtf();
+
+// rates table
+const rates = DATA.rows.filter(r => r.kind === 'rate');
+document.getElementById('rates').innerHTML = '<thead><tr><th class="name" scope="col">Series</th><th scope="col">Yield</th>'
+  + H.map(h => `<th scope="col">${SHORT[h]}</th>`).join('') + '</tr></thead><tbody>'
+  + rates.map(r => '<tr>' + nameCell(r, false) + `<td class="lvl" title="${r.last_date ? d8(r.last_date) : ''}">${r.level != null ? r.level.toFixed(2) + '%' : '–'}${r.last_date && r.last_date !== DATA.as_of ? `<span class="tk">${d8(r.last_date).replace(/ \d{4}$/, '')}</span>` : ''}</td>`
+    + H.map(h => cell(r.cells[h], h, 'rate', r.name)).join('') + '</tr>').join('') + '</tbody>';
+
+// relationships
+const relE = DATA.relationships.filter(r => r.kind === 'etf'), relR = DATA.relationships.filter(r => r.kind === 'rate');
+const relName = r => `<td class="name">${esc(r.name)}<span class="tk">${esc(r.a)} vs ${esc(r.b)}</span>`
+  + r.flags.map(f => `<span class="flag">${esc(f)}</span>`).join('') + '</td>';
+document.getElementById('rel-etf').innerHTML = '<thead><tr><th class="name" scope="col">Market pair (relative return, %)</th>'
+  + H.map(h => `<th scope="col">${SHORT[h]}</th>`).join('') + '</tr></thead><tbody>'
+  + relE.map(r => '<tr>' + relName(r) + H.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>').join('') + '</tbody>';
+document.getElementById('rel-rate').innerHTML = '<thead><tr><th class="name" scope="col">Rate spread (change, bp)</th><th scope="col">Spread</th>'
+  + H.map(h => `<th scope="col">${SHORT[h]}</th>`).join('') + '</tr></thead><tbody>'
+  + relR.map(r => '<tr>' + relName(r) + `<td class="lvl">${r.level != null ? minus((r.level > 0 ? '+' : '') + r.level.toFixed(2)) + ' pts' : '–'}</td>`
+    + H.map(h => cell(r.cells[h], h, 'rate', r.name)).join('') + '</tr>').join('') + '</tbody>';
+
+// highlights
+let hl = '1m';
+function drawTiles(){
+  const have = etfs.filter(r => r.cells[hl]).sort((a, b) => b.cells[hl].v - a.cells[hl].v);
+  const li = r => `<li><span>${esc(r.name)}<span class="tk">${esc(r.ticker)}</span></span><span class="v">${fmtPct(r.cells[hl].v, hl)}%</span></li>`;
+  const pairs = relE.filter(r => r.cells[hl]).sort((a, b) => Math.abs(b.cells[hl].v) - Math.abs(a.cells[hl].v)).slice(0, 4);
+  const pli = r => `<li><span>${esc(r.name)}</span><span class="v">${fmtPct(r.cells[hl].v, hl)}%</span></li>`;
+  document.getElementById('tiles').innerHTML =
+    `<div class="tile"><h3>Strongest · ${LABEL[hl]}</h3><ol>${have.slice(0, 5).map(li).join('')}</ol></div>`
+    + `<div class="tile"><h3>Weakest · ${LABEL[hl]}</h3><ol>${have.slice(-5).reverse().map(li).join('')}</ol></div>`
+    + `<div class="tile"><h3>Widest gaps between pairs · ${LABEL[hl]}</h3><ol>${pairs.map(pli).join('')}</ol></div>`;
+  document.querySelectorAll('#hl-buttons button').forEach(b => b.setAttribute('aria-pressed', b.dataset.h === hl));
+}
+document.getElementById('hl-buttons').innerHTML = H.map(h => `<button class="seg" data-h="${h}" aria-pressed="false">${SHORT[h]}</button>`).join('');
+document.querySelectorAll('#hl-buttons button').forEach(b => b.onclick = () => { hl = b.dataset.h; drawTiles(); });
+drawTiles();
+
+// method
+const older = DATA.bad_prints.reduce((s, b) => s + b.dates.filter(d => d < yrStart).length, 0);
+const st = DATA.starts;
+document.getElementById('method-list').innerHTML = [
+  `Period starts for this view: 1 week ${d8(st['1w'])}, 1 month ${d8(st['1m'])}, 3 months ${d8(st['3m'])}, year to date ${d8(st.ytd)}, 1 year ${d8(st['1y'])}. Each figure is measured from the last close on or before that date; 1 day is against the previous stored close. Hover any figure for its exact dates.`,
+  'Prices: London-listed sterling ETF lines from Yahoo Finance, stored daily by Minato in its own append-only history (a stored day is never rewritten). They are proxies for the indices, after fund costs. IA sector averages and MSCI factsheet returns remain the reference for anything client-facing.',
+  'Total return is computed by Minato from the stored close and dividends, not from the vendor’s adjusted close (which, on 27 Oct 2026, missed most dividends on the FTSE 100, FTSE 250 and property lines).',
+  'Rates: Bank of England (Bank Rate; nominal par and real zero-coupon gilt yields) and US Treasury par yields. Nominal par minus real zero-coupon is not a clean breakeven inflation rate.',
+  `${Object.keys(byDay).length ? `Bad prices left out inside the last year: ${esc(Object.keys(byDay).sort().map(d => `${d8(d)}: ${byDay[d].join(', ')}`).join('; '))}. ` : ''}Bad prices: a close more than 20% away from the median of the eleven days around it, confirmed by later closes, is left out of the figures and listed here. ${DATA.bad_prints.length ? `Lines affected over the full history: ${esc(DATA.bad_prints.map(b => `${b.ticker} (${b.dates.length})`).join(', '))}; ${older} of them before the last year.` : 'None found.'} A jump of that size in the last two days cannot be confirmed yet, so that line’s figures are held back and it is marked check.`,
+  'A line is marked check when its last close is three or more days before the as-at date, or a rate’s last value is five or more days old.'
+].map(t => `<li>${t}</li>`).join('');
+document.getElementById('foot').textContent = `Minato Wealth · Market Picture (internal) · public market data only · built ${DATA.built}`;
+</script>
+</body>
+</html>
