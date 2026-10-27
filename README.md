@@ -35,6 +35,10 @@ Gaps fixed:
   only if it agrees with the sterling line where both exist (median gap within 2%; 0.26% on 27 Oct 2026),
   and every spliced row says so in its `source` column.
 
+- **Real gilt yields** added: Bank of England 5, 10 and 20-year real zero-coupon yields (IUDSRZC,
+  IUDMRZC, IUDLRZC). Note the nominal gilt series are par yields, so nominal minus real here is not a
+  clean breakeven. **2-year gilt: still open** - no 2-year series answers in the IADB database.
+
 Known behaviour: Yahoo sometimes leaves a day's close empty (26 Oct 2026 for every London line). The
 report lists such weekdays; because each run re-reads full history, the day is added if Yahoo fills it.
 ETF rows dated today are skipped before 17:00 London so an intraday price is never frozen into history.

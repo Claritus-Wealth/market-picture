@@ -48,6 +48,9 @@
     {"layer": "7 Rates", "id": "gilt_10y", "name": "10-year gilt nominal par yield", "source": "boe", "code": "IUDMNPY", "confidence": "medium"},
     {"layer": "7 Rates", "id": "gilt_5y", "name": "5-year gilt nominal par yield", "source": "boe", "code": "IUDSNPY", "confidence": "medium"},
     {"layer": "7 Rates", "id": "gilt_20y", "name": "20-year gilt nominal par yield", "source": "boe", "code": "IUDLNPY", "confidence": "medium"},
+    {"layer": "7 Rates", "id": "real_5y", "name": "5-year real gilt yield (zero coupon)", "source": "boe", "code": "IUDSRZC", "confidence": "high"},
+    {"layer": "7 Rates", "id": "real_10y", "name": "10-year real gilt yield (zero coupon)", "source": "boe", "code": "IUDMRZC", "confidence": "high"},
+    {"layer": "7 Rates", "id": "real_20y", "name": "20-year real gilt yield (zero coupon)", "source": "boe", "code": "IUDLRZC", "confidence": "high"},
     {"layer": "7 Rates", "id": "us_10y", "name": "US 10-year Treasury yield", "source": "treasury", "treasury_col": "10 Yr", "code": "DGS10", "confidence": "high"},
     {"layer": "7 Rates", "id": "us_2y", "name": "US 2-year Treasury yield", "source": "treasury", "treasury_col": "2 Yr", "code": "DGS2", "confidence": "high"}
   ]
