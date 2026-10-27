@@ -1,0 +1,54 @@
+# Minato Wealth - Market Picture daily build.
+# Weekdays after the London close (and on demand): fetches every series in
+# instruments.json, appends what is new to the history under data/, and commits it.
+# The history is committed before the job reports failure, so a bad day never loses
+# the series that did arrive. Publishes nothing else.
+name: Daily build
+
+on:
+  schedule:
+    - cron: '30 21 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies (yfinance is required)
+        run: pip install --quiet -r requirements.txt
+
+      - name: Fetch every series and append to the history
+        id: build
+        run: python3 build_daily.py
+
+      - name: Commit the history
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -m "Daily build - $(TZ=Europe/London date +%Y-%m-%d)"
+          git pull --rebase
+          git push
+
+      - name: Fail loudly if any series failed
+        if: steps.build.outputs.failed != '0'
+        run: |
+          echo "::error::${{ steps.build.outputs.failed }} series failed - see data/report.md"
+          exit 1

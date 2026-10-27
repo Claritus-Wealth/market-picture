@@ -1,5 +1,5 @@
 {
-  "_note": "Market Picture instrument list v1, agreed 26 Oct 2026. London-listed sterling ETF lines as free daily proxies for indices. Tickers researched, not yet test-fetched. 'yahoo' is the Yahoo Finance symbol; 'dist' true means a distributing share class (price drops on ex-dividend dates; adjust for total return).",
+  "_note": "Market Picture instrument list v1, agreed 26 Oct 2026. London-listed sterling ETF lines as free daily proxies for indices. All 41 series test-fetched 26 Oct 2026; stage 2 (27 Oct): US yields from the US Treasury par yield CSV (FRED, as fallback, does not answer GitHub runners); XWUS backfilled from its USD line. 'code' on US rates is the FRED fallback id. 'yahoo' is the Yahoo Finance symbol; 'dist' true means a distributing share class (price drops on ex-dividend dates; adjust for total return).",
   "etfs": [
     {"layer": "1 Global", "id": "world", "name": "MSCI World", "ticker": "SWDA", "yahoo": "SWDA.L", "isin": "IE00B4L5Y983", "dist": false},
     {"layer": "1 Global", "id": "acwi", "name": "MSCI ACWI", "ticker": "SSAC", "yahoo": "SSAC.L", "isin": "IE00B6R52259", "dist": false},
@@ -27,7 +27,7 @@
     {"layer": "5 Sectors", "id": "s_ind", "name": "World Industrials", "ticker": "XWIS", "yahoo": "XWIS.L", "isin": "IE00BM67HV82", "dist": false},
     {"layer": "5 Sectors", "id": "s_staples", "name": "World Consumer Staples", "ticker": "XWCS", "yahoo": "XWCS.L", "isin": "IE00BM67HN09", "dist": false},
     {"layer": "5 Sectors", "id": "s_discr", "name": "World Consumer Discretionary", "ticker": "XWDS", "yahoo": "XWDS.L", "isin": "IE00BM67HP23", "dist": false},
-    {"layer": "5 Sectors", "id": "s_util", "name": "World Utilities", "ticker": "XWUS", "yahoo": "XWUS.L", "isin": "IE00BM67HQ30", "dist": false},
+    {"layer": "5 Sectors", "id": "s_util", "name": "World Utilities", "ticker": "XWUS", "yahoo": "XWUS.L", "isin": "IE00BM67HQ30", "dist": false, "backfill": {"yahoo": "XDWU.L", "currency": "USD", "fx": "GBPUSD=X", "why": "GBP line listed only Aug 2023; XDWU.L is the USD line of the same fund (same ISIN), from 2010"}},
     {"layer": "5 Sectors", "id": "s_mat", "name": "World Materials", "ticker": "XSMW", "yahoo": "XSMW.L", "isin": "IE00BM67HS53", "dist": false},
     {"layer": "5 Sectors", "id": "s_comm", "name": "World Communication Services", "ticker": "XSSW", "yahoo": "XSSW.L", "isin": "IE00BM67HR47", "dist": false},
 
@@ -48,7 +48,7 @@
     {"layer": "7 Rates", "id": "gilt_10y", "name": "10-year gilt nominal par yield", "source": "boe", "code": "IUDMNPY", "confidence": "medium"},
     {"layer": "7 Rates", "id": "gilt_5y", "name": "5-year gilt nominal par yield", "source": "boe", "code": "IUDSNPY", "confidence": "medium"},
     {"layer": "7 Rates", "id": "gilt_20y", "name": "20-year gilt nominal par yield", "source": "boe", "code": "IUDLNPY", "confidence": "medium"},
-    {"layer": "7 Rates", "id": "us_10y", "name": "US 10-year Treasury yield", "source": "fred", "code": "DGS10", "confidence": "high"},
-    {"layer": "7 Rates", "id": "us_2y", "name": "US 2-year Treasury yield", "source": "fred", "code": "DGS2", "confidence": "high"}
+    {"layer": "7 Rates", "id": "us_10y", "name": "US 10-year Treasury yield", "source": "treasury", "treasury_col": "10 Yr", "code": "DGS10", "confidence": "high"},
+    {"layer": "7 Rates", "id": "us_2y", "name": "US 2-year Treasury yield", "source": "treasury", "treasury_col": "2 Yr", "code": "DGS2", "confidence": "high"}
   ]
 }
