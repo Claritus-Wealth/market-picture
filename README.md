@@ -23,7 +23,7 @@ averages and MSCI factsheet returns remain the reference points for anything cli
   - `data/etf/<id>.csv` - date, close in pounds (pence lines divided by 100), dividend in pounds, source.
   - `data/rates/<id>.csv` - date, yield in percent, source.
   - `data/daily/<date>.json` and `data/latest.json` - the day's snapshot; `data/report.md` - the report.
-- `.github/workflows/daily-build.yml` - "Daily build": weekdays 21:30 UTC and on demand. Commits the
+- `.github/workflows/daily-build.yml` - "Daily build": weekdays 21:30 UTC and on demand (stage 3: also publishes the view). Commits the
   history first, then fails the job if any series failed, so GitHub emails the failure.
 - `requirements.txt` - yfinance is **required** (GitHub runners are refused by the direct Yahoo route).
 
@@ -65,5 +65,7 @@ ETF rows dated today are skipped before 17:00 London so an intraday price is nev
 - The daily workflow builds the view after the history and commits both. If the view fails, the
   history is still committed and the job fails loudly.
 
-Nothing is published: the view is committed to this repository only. Publishing (GitHub Pages) is a
-decision still to be taken. To read it now: open `view/index.html` from a local clone in a browser.
+**Published (decided 27 Oct 2026):** https://claritus-wealth.github.io/market-picture/ - noindex, open to
+anyone with the link (public market data; the repository is public anyway). The daily workflow publishes
+the `view/` folder only, after each build; if the view fails to build, nothing is published and the last
+good page stays up. `view/apple-touch-icon.png` is the Home Screen icon on iPhone and iPad.

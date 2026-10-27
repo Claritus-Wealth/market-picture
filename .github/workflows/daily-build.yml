@@ -4,7 +4,9 @@
 # view (view/index.html) from that history, and commits both.
 # The history is committed before the job reports failure, so a bad day never loses
 # the series that did arrive; a broken view never stops the history being committed.
-# Publishes nothing: the view is committed to the repository only (no Pages).
+# The view folder alone (not the history) is then published to GitHub Pages:
+# https://claritus-wealth.github.io/market-picture/ (noindex; decided 27 Oct 2026).
+# A broken view is never published: the last good page stays up.
 name: Daily build
 
 on:
@@ -23,6 +25,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      view_failed: ${{ steps.view.outputs.failed }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -55,6 +59,12 @@ jobs:
           git pull --rebase
           git push
 
+      - name: Package the view for publishing
+        if: steps.view.outputs.failed == '0'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: view/
+
       - name: Fail loudly if any series failed
         if: steps.build.outputs.failed != '0'
         run: |
@@ -66,3 +76,19 @@ jobs:
         run: |
           echo "::error::build_view.py failed - the history was committed, the view was not updated"
           exit 1
+
+  publish:
+    needs: build
+    # publish whenever the view built, even if some series failed (the page marks them)
+    if: ${{ !cancelled() && needs.build.outputs.view_failed == '0' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publish the view to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
