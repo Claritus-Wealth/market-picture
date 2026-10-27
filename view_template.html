@@ -75,6 +75,7 @@
   tr.layer td{text-align:left;font-weight:600;color:var(--ink-2);padding-top:12px;font-size:12.5px;background:var(--surface-1)}
   td.c{font-variant-numeric:tabular-nums;border-radius:4px;color:var(--ink-1);min-width:62px}
   td.c.na{color:var(--ink-3)}
+  td.c.hi{border-left:6px solid var(--surface-1)}
   td.lvl{font-variant-numeric:tabular-nums;color:var(--ink-2)}
   .tk{color:var(--ink-3);font-size:12px;margin-left:6px}
   .tag{display:inline-block;font-size:11px;color:var(--ink-3);border:1px solid var(--border);border-radius:5px;padding:0 5px;margin-left:6px}
@@ -107,7 +108,7 @@
   <div class="tiles" id="tiles"></div>
 
   <h2>Markets</h2>
-  <p class="lede">Total return in sterling, in percent: price change plus dividends reinvested on the ex-dividend date, so distributing and accumulating lines compare fairly. Each figure runs from the last close on or before the period start to the as-at date. Click a period heading to rank every line by it; click again to reverse, a third time to return to layers.</p>
+  <p class="lede">Total return in sterling, in percent: price change plus dividends reinvested on the ex-dividend date, so distributing and accumulating lines compare fairly. Each figure runs from the last close on or before the period start to the as-at date. <b>From high</b> is the distance below the highest point of the last 52 weeks, on the same total-return basis (0.0 = at the high). Click a heading to rank every line by it; click again to reverse, a third time to return to layers.</p>
   <div class="tablewrap"><table id="etf"></table></div>
   <div class="key"><span>fell</span><span class="bar" aria-hidden="true"></span><span>rose</span><span style="color:var(--ink-3)">· shade scales with the size of the move for that period; the sign is always printed</span></div>
 
@@ -129,10 +130,11 @@
 <script>
 const DATA = /*__DATA__*/;
 const H = DATA.horizons;
-const LABEL = {'1d':'1 day','1w':'1 week','1m':'1 month','3m':'3 months','ytd':'Year to date','1y':'1 year'};
-const SHORT = {'1d':'1d','1w':'1w','1m':'1m','3m':'3m','ytd':'YTD','1y':'1y'};
+const LABEL = {'1d':'1 day','1w':'1 week','1m':'1 month','3m':'3 months','ytd':'Year to date','1y':'1 year','hi':'From 52-week high'};
+const SHORT = {'1d':'1d','1w':'1w','1m':'1m','3m':'3m','ytd':'YTD','1y':'1y','hi':'From high'};
+const EH = H.concat(['hi']);  // market table columns: the periods, then distance from the 52-week high
 // colour scale: a move this size or larger gets the full shade
-const SCALE_PCT = {'1d':1.5,'1w':3,'1m':5,'3m':8,'ytd':15,'1y':15};
+const SCALE_PCT = {'1d':1.5,'1w':3,'1m':5,'3m':8,'ytd':15,'1y':15,'hi':20};
 const SCALE_BP = {'1d':8,'1w':20,'1m':30,'3m':50,'ytd':100,'1y':100};
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DAY = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -141,7 +143,7 @@ const d8 = iso => { const [y,m,d] = iso.split('-').map(Number); return `${d} ${M
 const dLong = iso => { const [y,m,d] = iso.split('-').map(Number); return `${DAY[new Date(Date.UTC(y,m-1,d)).getUTCDay()]} ${d} ${MON[m-1]} ${y}`; };
 const minus = s => s.replace('-', '−');
 // two decimals for the short periods, one for the long ones: one precision per column
-const fmtPct = (v, h) => minus((v > 0 ? '+' : '') + v.toFixed(h === 'ytd' || h === '1y' ? 1 : 2));
+const fmtPct = (v, h) => minus((v > 0 ? '+' : '') + v.toFixed(h === 'ytd' || h === '1y' || h === 'hi' ? 1 : 2));
 const fmtBp = v => minus((v > 0 ? '+' : '') + (Math.abs(v) < 10 ? v.toFixed(1) : v.toFixed(0)));
 
 function shade(v, h, kind){
@@ -154,7 +156,9 @@ function cell(c, h, kind, who){
   if (!c) return `<td class="c na" title="${esc(who)}: not enough history for ${LABEL[h].toLowerCase()}">–</td>`;
   const txt = kind === 'etf' ? fmtPct(c.v, h) : fmtBp(c.v);
   const unit = kind === 'etf' ? '%' : ' bp';
-  return `<td class="c" style="background:${shade(c.v, h, kind)}" title="${esc(who)} · ${LABEL[h]}: ${txt}${unit} · ${d8(c.from)} to ${d8(DATA.as_of)}">${txt}</td>`;
+  const tip = h === 'hi' ? `${esc(who)} · ${c.v === 0 ? 'at its 52-week high' : `${txt}% from its 52-week high of ${d8(c.from)}`} (total return)`
+    : `${esc(who)} · ${LABEL[h]}: ${txt}${unit} · ${d8(c.from)} to ${d8(DATA.as_of)}`;
+  return `<td class="c${h === 'hi' ? ' hi' : ''}" style="background:${shade(c.v, h, kind)}" title="${tip}">${txt}</td>`;
 }
 function nameCell(r, showLayer){
   const flags = r.flags.map(f => `<span class="flag">${esc(f)}</span>`).join('');
@@ -195,16 +199,16 @@ function drawEtf(){
   if (!sortH){
     let layer = null;
     for (const r of etfs){
-      if (r.layer !== layer){ layer = r.layer; body += `<tr class="layer"><td colspan="${H.length + 1}">${esc(layer.replace(/^\d+ /,''))}</td></tr>`; }
-      body += '<tr>' + nameCell(r, false) + H.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>';
+      if (r.layer !== layer){ layer = r.layer; body += `<tr class="layer"><td colspan="${EH.length + 1}">${esc(layer.replace(/^\d+ /,''))}</td></tr>`; }
+      body += '<tr>' + nameCell(r, false) + EH.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>';
     }
   } else {
     const val = r => r.cells[sortH] ? r.cells[sortH].v : null;
     const list = etfs.slice().sort((a, b) => (val(a) === null) - (val(b) === null) || sortDir * ((val(a) ?? 0) - (val(b) ?? 0)));
-    for (const r of list) body += '<tr>' + nameCell(r, true) + H.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>';
+    for (const r of list) body += '<tr>' + nameCell(r, true) + EH.map(h => cell(r.cells[h], h, 'etf', r.name)).join('') + '</tr>';
   }
   const t = document.getElementById('etf');
-  t.innerHTML = '<caption class="sr" style="position:absolute;left:-9999px">Total return by period, percent</caption>' + headRow(H, true) + '<tbody>' + body + '</tbody>';
+  t.innerHTML = '<caption class="sr" style="position:absolute;left:-9999px">Total return by period, and distance from the 52-week high, percent</caption>' + headRow(EH, true) + '<tbody>' + body + '</tbody>';
   t.querySelectorAll('th button').forEach(b => b.onclick = () => {
     const h = b.dataset.h;
     if (sortH !== h){ sortH = h; sortDir = -1; } else if (sortDir < 0){ sortDir = 1; } else { sortH = null; }
@@ -243,7 +247,9 @@ function drawTiles(){
   document.getElementById('tiles').innerHTML =
     `<div class="tile"><h3>Strongest · ${LABEL[hl]}</h3><ol>${have.slice(0, 5).map(li).join('')}</ol></div>`
     + `<div class="tile"><h3>Weakest · ${LABEL[hl]}</h3><ol>${have.slice(-5).reverse().map(li).join('')}</ol></div>`
-    + `<div class="tile"><h3>Widest gaps between pairs · ${LABEL[hl]}</h3><ol>${pairs.map(pli).join('')}</ol></div>`;
+    + `<div class="tile"><h3>Widest gaps between pairs · ${LABEL[hl]}</h3><ol>${pairs.map(pli).join('')}</ol></div>`
+    + `<div class="tile"><h3>Furthest below 52-week high</h3><ol>${etfs.filter(r => r.cells.hi).sort((a, b) => a.cells.hi.v - b.cells.hi.v).slice(0, 5)
+        .map(r => `<li><span>${esc(r.name)}<span class="tk">${esc(r.ticker)}</span></span><span class="v">${fmtPct(r.cells.hi.v, 'hi')}%</span></li>`).join('')}</ol></div>`;
   document.querySelectorAll('#hl-buttons button').forEach(b => b.setAttribute('aria-pressed', b.dataset.h === hl));
 }
 document.getElementById('hl-buttons').innerHTML = H.map(h => `<button class="seg" data-h="${h}" aria-pressed="false">${SHORT[h]}</button>`).join('');

@@ -3,7 +3,7 @@
 
 Reads Minato's own stored history (data/etf, data/rates; written by build_daily.py) and
 builds the daily view: returns over 1d, 1w, 1m, 3m, YTD and 1y for every series, by layer,
-all measured to one "as at" date. Fetches nothing; standard library only.
+all measured to one "as at" date, plus each ETF's distance from its 52-week high. Fetches nothing; standard library only.
 
 ETFs: total return in sterling, from the stored close plus dividends (dividend reinvested on
 its ex-date: TR_t = TR_t-1 x (close_t + dividend_t) / close_t-1), so a distributing line is
@@ -97,6 +97,14 @@ def measure(series, as_of, kind):
             cells[h] = {'v': round((end[1] - b[1]) * 100, 1), 'from': b[0]}
     return end, cells
 
+def from_high(tr, end, as_of):
+    """Distance of the total-return index from its highest point in the last 52 weeks, and that date."""
+    start = add_months(as_of, -12).isoformat()
+    if tr[0][0] > start:
+        return None
+    hi = max((x for x in tr if start <= x[0] <= end[0]), key=lambda x: x[1])
+    return {'v': round((end[1] / hi[1] - 1) * 100, 2), 'from': hi[0]}
+
 def latest_common(etf_dates, as_of=None):
     """The latest date held by at least half the ETF lines (on or before as_of if given)."""
     cut = as_of.isoformat() if as_of else '9999'
@@ -126,7 +134,9 @@ def main():
         if bad:
             excluded.append({'id': e['id'], 'ticker': e['ticker'], 'dates': [h[i][0] for i in bad]})
         clean = [r for i, r in enumerate(h) if i not in set(bad)]
-        end, cells = measure(tr_index(clean), as_of, 'etf')
+        tr = tr_index(clean)
+        end, cells = measure(tr, as_of, 'etf')
+        cells['hi'] = from_high(tr, end, as_of) if end else None
         r = {'kind': 'etf', 'layer': e['layer'], 'id': e['id'], 'name': e['name'], 'ticker': e['ticker'],
              'dist': e['dist'], 'flags': [], 'status': 'ok'}
         if end:
@@ -138,7 +148,7 @@ def main():
             r['flags'].append(f'unconfirmed jump over {BAD_PRINT:.0%} on {", ".join(h[i][0] for i in unconf)}'
                               ' - figures held back until later closes confirm or correct it')
             r['status'] = 'check'
-            cells = {k: None for k in HORIZONS}
+            cells = {k: None for k in HORIZONS + ['hi']}
         r['cells'] = cells
         rows.append(r)
 
