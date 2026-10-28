@@ -1,7 +1,7 @@
 {
- "date": "2026-10-27",
- "run": "2026-10-27 10:24 UTC",
- "etf_cutoff": "2026-10-26",
+ "date": "2026-10-28",
+ "run": "2026-10-28 00:38 UTC",
+ "etf_cutoff": "2026-10-27",
  "results": [
   {
    "kind": "etf",
@@ -21,7 +21,7 @@
    "last_date": "2026-10-26",
    "last_value": 109.28,
    "n": 4315,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.524
   },
@@ -43,7 +43,7 @@
    "last_date": "2026-10-26",
    "last_value": 91.26,
    "n": 3790,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.451
   },
@@ -65,7 +65,7 @@
    "last_date": "2026-10-26",
    "last_value": 38.01,
    "n": 3129,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": -0.184
   },
@@ -87,7 +87,7 @@
    "last_date": "2026-10-26",
    "last_value": 10.484,
    "n": 4500,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.73
   },
@@ -109,7 +109,7 @@
    "last_date": "2026-10-26",
    "last_value": 93.620003,
    "n": 3702,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.732
   },
@@ -131,7 +131,7 @@
    "last_date": "2026-10-26",
    "last_value": 620.76,
    "n": 4151,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.456
   },
@@ -153,7 +153,7 @@
    "last_date": "2026-10-26",
    "last_value": 41.139999,
    "n": 3049,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.722
   },
@@ -175,7 +175,7 @@
    "last_date": "2026-10-26",
    "last_value": 60.98,
    "n": 4315,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.445
   },
@@ -197,7 +197,7 @@
    "last_date": "2026-10-26",
    "last_value": 182.62,
    "n": 4240,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.501
   },
@@ -219,7 +219,7 @@
    "last_date": "2026-10-26",
    "last_value": 22.585,
    "n": 4500,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 1.029
   },
@@ -241,7 +241,7 @@
    "last_date": "2026-10-26",
    "last_value": 59.17,
    "n": 3045,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.852
   },
@@ -263,7 +263,7 @@
    "last_date": "2026-10-26",
    "last_value": 67.29,
    "n": 3045,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.253
   },
@@ -285,7 +285,7 @@
    "last_date": "2026-10-26",
    "last_value": 83.12,
    "n": 3045,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 1.218
   },
@@ -307,7 +307,7 @@
    "last_date": "2026-10-26",
    "last_value": 7.615,
    "n": 2167,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.714
   },
@@ -329,7 +329,7 @@
    "last_date": "2026-10-26",
    "last_value": 1261.7,
    "n": 4224,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.847
   },
@@ -351,7 +351,7 @@
    "last_date": "2026-10-26",
    "last_value": 108.699997,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 1.258
   },
@@ -373,7 +373,7 @@
    "last_date": "2026-10-26",
    "last_value": 49.09,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": -0.02
   },
@@ -395,7 +395,7 @@
    "last_date": "2026-10-26",
    "last_value": 62.610001,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.08
   },
@@ -417,7 +417,7 @@
    "last_date": "2026-10-26",
    "last_value": 35.115002,
    "n": 3960,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.4
   },
@@ -439,7 +439,7 @@
    "last_date": "2026-10-26",
    "last_value": 61.439999,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 1.545
   },
@@ -461,7 +461,7 @@
    "last_date": "2026-10-26",
    "last_value": 43.509998,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": -0.086
   },
@@ -483,7 +483,7 @@
    "last_date": "2026-10-26",
    "last_value": 50.022499,
    "n": 3714,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.705
   },
@@ -507,7 +507,7 @@
    "last_date": "2026-10-26",
    "last_value": 35.18,
    "n": 3989,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.443
   },
@@ -529,7 +529,7 @@
    "last_date": "2026-10-26",
    "last_value": 57.07,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.396
   },
@@ -551,7 +551,7 @@
    "last_date": "2026-10-26",
    "last_value": 23.4825,
    "n": 3713,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": -1.21
   },
@@ -573,7 +573,7 @@
    "last_date": "2026-10-26",
    "last_value": 125.239998,
    "n": 4428,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": -0.032
   },
@@ -595,7 +595,7 @@
    "last_date": "2026-10-26",
    "last_value": 9.59,
    "n": 4754,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.131
   },
@@ -617,7 +617,7 @@
    "last_date": "2026-10-26",
    "last_value": 32.849998,
    "n": 3648,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.183
   },
@@ -639,7 +639,7 @@
    "last_date": "2026-10-26",
    "last_value": 10.986,
    "n": 4754,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.018
   },
@@ -661,7 +661,7 @@
    "last_date": "2026-10-26",
    "last_value": 117.190002,
    "n": 4754,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.0
   },
@@ -683,7 +683,7 @@
    "last_date": "2026-10-26",
    "last_value": 85.269997,
    "n": 3352,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.721
   },
@@ -705,7 +705,7 @@
    "last_date": "2026-10-26",
    "last_value": 3.6595,
    "n": 2172,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": -0.218
   },
@@ -727,7 +727,7 @@
    "last_date": "2026-10-26",
    "last_value": 4.53,
    "n": 2255,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.188
   },
@@ -749,7 +749,7 @@
    "last_date": "2026-10-26",
    "last_value": 18.31,
    "n": 4499,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.909
   },
@@ -771,7 +771,7 @@
    "last_date": "2026-10-26",
    "last_value": 68.559998,
    "n": 2366,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_pct": 0.55
   },
@@ -790,7 +790,7 @@
    "last_date": "2026-10-26",
    "last_value": 3.75,
    "n": 6776,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-10-23",
    "change_bp": 0.0
   },
@@ -809,7 +809,7 @@
    "last_date": "2026-10-23",
    "last_value": 5.3152,
    "n": 6775,
-   "age_days": 4,
+   "age_days": 5,
    "prev_date": "2026-10-22",
    "change_bp": 3.7
   },
@@ -828,7 +828,7 @@
    "last_date": "2026-10-23",
    "last_value": 4.9403,
    "n": 6775,
-   "age_days": 4,
+   "age_days": 5,
    "prev_date": "2026-10-22",
    "change_bp": 3.2
   },
@@ -847,7 +847,7 @@
    "last_date": "2026-10-23",
    "last_value": 5.6156,
    "n": 6775,
-   "age_days": 4,
+   "age_days": 5,
    "prev_date": "2026-10-22",
    "change_bp": 3.9
   },
@@ -866,7 +866,7 @@
    "last_date": "2026-10-23",
    "last_value": 1.277,
    "n": 6775,
-   "age_days": 4,
+   "age_days": 5,
    "prev_date": "2026-10-22",
    "change_bp": 2.4
   },
@@ -885,7 +885,7 @@
    "last_date": "2026-10-23",
    "last_value": 1.9725,
    "n": 6775,
-   "age_days": 4,
+   "age_days": 5,
    "prev_date": "2026-10-22",
    "change_bp": 2.9
   },
@@ -904,7 +904,7 @@
    "last_date": "2026-10-23",
    "last_value": 2.4655,
    "n": 6775,
-   "age_days": 4,
+   "age_days": 5,
    "prev_date": "2026-10-22",
    "change_bp": 5.0
   },
@@ -917,15 +917,15 @@
    "code": "DGS10",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-03",
-   "last_date": "2026-10-26",
-   "last_value": 5.0,
-   "n": 6707,
+   "last_date": "2026-10-27",
+   "last_value": 4.99,
+   "n": 6708,
    "age_days": 1,
-   "prev_date": "2026-10-23",
-   "change_bp": 0.0
+   "prev_date": "2026-10-26",
+   "change_bp": -1.0
   },
   {
    "kind": "rate",
@@ -936,15 +936,15 @@
    "code": "DGS2",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-03",
-   "last_date": "2026-10-26",
-   "last_value": 4.68,
-   "n": 6707,
+   "last_date": "2026-10-27",
+   "last_value": 4.7,
+   "n": 6708,
    "age_days": 1,
-   "prev_date": "2026-10-23",
-   "change_bp": -1.0
+   "prev_date": "2026-10-26",
+   "change_bp": 2.0
   }
  ]
 }

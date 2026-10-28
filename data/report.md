@@ -1,6 +1,6 @@
-# Market Picture daily build - 2026-10-27 (2026-10-27 10:24 UTC)
+# Market Picture daily build - 2026-10-28 (2026-10-28 00:38 UTC)
 
-**44 ok, 0 to check, 0 failed, of 44 series.** ETF prices up to 2026-10-26.
+**44 ok, 0 to check, 0 failed, of 44 series.** ETF prices up to 2026-10-27.
 
 | Layer | Series | Ticker/code | Status | Source | Last date | Last | Change | Added | Stored from | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -46,5 +46,5 @@
 | 7 Rates | 5-year real gilt yield (zero coupon) | IUDSRZC | ok | boe-iadb | 2026-10-23 | 1.28% | +2.4bp | 0 | 2000-01-04 |  |
 | 7 Rates | 10-year real gilt yield (zero coupon) | IUDMRZC | ok | boe-iadb | 2026-10-23 | 1.97% | +2.9bp | 0 | 2000-01-04 |  |
 | 7 Rates | 20-year real gilt yield (zero coupon) | IUDLRZC | ok | boe-iadb | 2026-10-23 | 2.47% | +5.0bp | 0 | 2000-01-04 |  |
-| 7 Rates | US 10-year Treasury yield | DGS10 | ok | us-treasury | 2026-10-26 | 5.00% | +0.0bp | 0 | 2000-01-03 |  |
-| 7 Rates | US 2-year Treasury yield | DGS2 | ok | us-treasury | 2026-10-26 | 4.68% | -1.0bp | 0 | 2000-01-03 |  |
+| 7 Rates | US 10-year Treasury yield | DGS10 | ok | us-treasury | 2026-10-27 | 4.99% | -1.0bp | 1 | 2000-01-03 |  |
+| 7 Rates | US 2-year Treasury yield | DGS2 | ok | us-treasury | 2026-10-27 | 4.70% | +2.0bp | 1 | 2000-01-03 |  |
