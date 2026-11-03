@@ -78,7 +78,7 @@ good page stays up. `view/apple-touch-icon.png` is the Home Screen icon on iPhon
   added: VAPX (FTSE Developed Asia Pacific ex Japan: includes Korea, not Taiwan), IKOR (Korea), ITWN (Taiwan).
   Test, October 2026: VAPX -9.19% against -9.42% for a FTSE World Asia-Pacific ex-Japan index fund; CPJ1 +0.03%.
   Rejected: Amundi MSCI AC Asia Pacific ex Japan (AEJL: includes China, thin trading, -8.49%).
-- **Lines for holdings that had none:** TI5G (US inflation-linked 0-5 years, GBP hedged), AT1S (bank AT1 / CoCo
+- **Lines for holdings that had none:** TI5G (US inflation-linked 0-5 years, GBP hedged), XGIG (global inflation-linked government bonds, all maturities, GBP hedged), AT1S (bank AT1 / CoCo
   bonds, GBP hedged), EHYG (euro high yield, BB-rated, GBP hedged; history from Apr 2023).
   **No line for the largest global companies:** UBS MSCI World Mega Cap (WOMC) was tried and rejected - Yahoo
   stores its prices in pence and pounds by turns before 29 Jul 2026 (100x jumps), and it barely trades. With an
