@@ -1,5 +1,5 @@
 {
-  "_note": "Market Picture instrument list v1, agreed 26 Oct 2026. London-listed sterling ETF lines as free daily proxies for indices. All 41 series test-fetched 26 Oct 2026; stage 2 (27 Oct): US yields from the US Treasury par yield CSV (FRED, as fallback, does not answer GitHub runners); XWUS backfilled from its USD line. 'code' on US rates is the FRED fallback id. 'yahoo' is the Yahoo Finance symbol; 'dist' true means a distributing share class (price drops on ex-dividend dates; adjust for total return).",
+  "_note": "Market Picture instrument list v1, agreed 26 Oct 2026. London-listed sterling ETF lines as free daily proxies for indices. All 41 series test-fetched 26 Oct 2026; 3 Nov 2026 (Session B): CPJ1 relabelled and 6 lines added (VAPX, IKOR, ITWN, TI5G, AT1S, EHYG; UBS World Mega Cap WOMC tried and rejected: Yahoo stores it in pence and pounds by turns before 29 Jul 2026, and it barely trades), because the in-house Asia Pacific ex Japan holding tracks the FTSE World Asia-Pacific ex-Japan index (Korea and Taiwan heavy, no China), which has no London ETF of its own; stage 2 (27 Oct): US yields from the US Treasury par yield CSV (FRED, as fallback, does not answer GitHub runners); XWUS backfilled from its USD line. 'code' on US rates is the FRED fallback id. 'yahoo' is the Yahoo Finance symbol; 'dist' true means a distributing share class (price drops on ex-dividend dates; adjust for total return).",
   "etfs": [
     {"layer": "1 Global", "id": "world", "name": "MSCI World", "ticker": "SWDA", "yahoo": "SWDA.L", "isin": "IE00B4L5Y983", "dist": false},
     {"layer": "1 Global", "id": "acwi", "name": "MSCI ACWI", "ticker": "SSAC", "yahoo": "SSAC.L", "isin": "IE00B6R52259", "dist": false},
@@ -10,7 +10,10 @@
     {"layer": "2 Regions", "id": "us", "name": "S&P 500", "ticker": "CSP1", "yahoo": "CSP1.L", "isin": "IE00B5BMR087", "dist": false},
     {"layer": "2 Regions", "id": "europe", "name": "Europe ex-UK", "ticker": "VERX", "yahoo": "VERX.L", "isin": "IE00BKX55S42", "dist": true},
     {"layer": "2 Regions", "id": "japan", "name": "Japan", "ticker": "SJPA", "yahoo": "SJPA.L", "isin": "IE00B4L5YX21", "dist": false},
-    {"layer": "2 Regions", "id": "pacxj", "name": "Pacific ex-Japan (developed)", "ticker": "CPJ1", "yahoo": "CPJ1.L", "isin": "IE00B52MJY50", "dist": false},
+    {"layer": "2 Regions", "id": "pacxj", "name": "Australia, Hong Kong, Singapore, NZ (MSCI Pacific ex Japan)", "ticker": "CPJ1", "yahoo": "CPJ1.L", "isin": "IE00B52MJY50", "dist": false},
+    {"layer": "2 Regions", "id": "apxj", "name": "Asia Pacific ex Japan incl. Korea (FTSE Developed; no Taiwan, no China)", "ticker": "VAPX", "yahoo": "VAPX.L", "isin": "IE00B9F5YL18", "dist": true},
+    {"layer": "2 Regions", "id": "korea", "name": "Korea (MSCI Korea 20/35)", "ticker": "IKOR", "yahoo": "IKOR.L", "isin": "IE00B0M63391", "dist": true},
+    {"layer": "2 Regions", "id": "taiwan", "name": "Taiwan (MSCI Taiwan 20/35)", "ticker": "ITWN", "yahoo": "ITWN.L", "isin": "IE00B0M63623", "dist": true},
 
     {"layer": "3 UK detail", "id": "uk250", "name": "FTSE 250", "ticker": "MIDD", "yahoo": "MIDD.L", "isin": "IE00B00FV128", "dist": true},
 
@@ -39,6 +42,9 @@
     {"layer": "6 Bonds", "id": "hy_global", "name": "Global high yield (GBP hedged)", "ticker": "GHYS", "yahoo": "GHYS.L", "isin": "IE00B8KQFS66", "dist": true},
     {"layer": "6 Bonds", "id": "em_debt", "name": "EM debt, hard currency (GBP hedged)", "ticker": "EMHG", "yahoo": "EMHG.L", "isin": "IE00BDFGJ734", "dist": true},
     {"layer": "6 Bonds", "id": "agg_global", "name": "Global aggregate bonds (GBP hedged)", "ticker": "AGBP", "yahoo": "AGBP.L", "isin": "IE00BF540Y54", "dist": true},
+    {"layer": "6 Bonds", "id": "tips_short", "name": "Short-dated US inflation-linked 0-5 years (GBP hedged)", "ticker": "TI5G", "yahoo": "TI5G.L", "isin": "IE00BDZVHB89", "dist": true},
+    {"layer": "6 Bonds", "id": "at1", "name": "Bank AT1 / CoCo bonds (GBP hedged)", "ticker": "AT1S", "yahoo": "AT1S.L", "isin": "IE00BYZLWM19", "dist": true},
+    {"layer": "6 Bonds", "id": "hy_euro", "name": "Euro high yield, BB-rated (GBP hedged; history from Apr 2023)", "ticker": "EHYG", "yahoo": "EHYG.L", "isin": "IE000YZVB4R7", "dist": false},
 
     {"layer": "8 Real assets", "id": "property", "name": "Developed markets property", "ticker": "IWDP", "yahoo": "IWDP.L", "isin": "IE00B1FZS350", "dist": true},
     {"layer": "8 Real assets", "id": "goldminers", "name": "Gold miners", "ticker": "GDGB", "yahoo": "GDGB.L", "isin": "IE00BQQP9F84", "dist": false}

@@ -20,6 +20,11 @@ Writes:
   view/view.json   every figure on the page, with the dates each was measured between
   view/index.html  the page: view_template.html with the data injected at /*__DATA__*/
 
+Calendar grid (added 3 Nov 2026): the last 12 completed calendar months and the last 4 completed
+quarters, each from the last close on or before one month-end (or quarter-end) to the last close
+on or before the next, so figures line up with platform valuation dates and quarter-end reporting.
+A month counts as completed once the as-at date reaches its last weekday.
+
 Usage: build_view.py [--as-of YYYY-MM-DD]   (default: the latest common ETF date)
 Not published anywhere: the page is committed to the repository only.
 """
@@ -105,6 +110,64 @@ def from_high(tr, end, as_of):
     hi = max((x for x in tr if start <= x[0] <= end[0]), key=lambda x: x[1])
     return {'v': round((end[1] / hi[1] - 1) * 100, 2), 'from': hi[0]}
 
+CAL_MONTHS, CAL_QUARTERS = 12, 4
+
+def month_end(y, m):
+    return datetime.date(y + (m == 12), m % 12 + 1, 1) - datetime.timedelta(days=1)
+
+def last_weekday(d):
+    while d.weekday() >= 5:
+        d -= datetime.timedelta(days=1)
+    return d
+
+def r_keys(cal):
+    return [p['key'] for p in cal['months'] + cal['quarters']]
+
+def calendar_periods(as_of):
+    """Completed calendar months and quarters up to as_of: [{key, label, start, end}], oldest first.
+    start is the previous period-end date, end this period's end date (calendar dates)."""
+    y, m = as_of.year, as_of.month
+    if last_weekday(month_end(y, m)) > as_of:  # this month not complete yet
+        y, m = (y - 1, 12) if m == 1 else (y, m - 1)
+    months = []
+    for _ in range(CAL_MONTHS):
+        py, pm = (y - 1, 12) if m == 1 else (y, m - 1)
+        months.append({'key': f'{y}-{m:02d}', 'label': datetime.date(y, m, 1).strftime('%b %Y'),
+                       'start': month_end(py, pm).isoformat(), 'end': month_end(y, m).isoformat()})
+        y, m = py, pm
+    months.reverse()
+    quarters = []
+    last = datetime.date.fromisoformat(months[-1]['end'])
+    qy, qm = last.year, last.month - (last.month % 3)  # last completed quarter-end month
+    if qm == 0:
+        qy, qm = qy - 1, 12
+    for _ in range(CAL_QUARTERS):
+        sy, sm = (qy - 1, 12) if qm == 3 else (qy, qm - 3)
+        quarters.append({'key': f'{qy}-Q{qm // 3}', 'label': f'Q{qm // 3} {qy}',
+                         'start': month_end(sy, sm).isoformat(), 'end': month_end(qy, qm).isoformat()})
+        qy, qm = sy, sm
+    quarters.reverse()
+    return {'months': months, 'quarters': quarters}
+
+def measure_calendar(series, periods, kind):
+    """series: [(date, value)]. Change between the last values on or before each period's start and end."""
+    out = {}
+    if not series:
+        return out
+    for p in periods['months'] + periods['quarters']:
+        s = datetime.date.fromisoformat(p['start'])
+        if series[0][0] > p['start']:
+            out[p['key']] = None
+            continue
+        a, b = on_or_before(series, s), on_or_before(series, datetime.date.fromisoformat(p['end']))
+        if not a or not b or b[0] <= a[0]:
+            out[p['key']] = None
+        elif kind == 'etf':
+            out[p['key']] = {'v': round((b[1] / a[1] - 1) * 100, 2), 'from': a[0], 'to': b[0]}
+        else:
+            out[p['key']] = {'v': round((b[1] - a[1]) * 100, 1), 'from': a[0], 'to': b[0]}
+    return out
+
 def latest_common(etf_dates, as_of=None):
     """The latest date held by at least half the ETF lines (on or before as_of if given)."""
     cut = as_of.isoformat() if as_of else '9999'
@@ -127,6 +190,7 @@ def main():
     if args.as_of:  # look only at what was stored up to that date
         hist = {k: [r for r in h if r[0] <= as_of.isoformat()] for k, h in hist.items()}
 
+    cal = calendar_periods(as_of)
     rows, excluded = [], []
     for e in cfg['etfs']:
         h = hist[e['id']]
@@ -150,6 +214,7 @@ def main():
             r['status'] = 'check'
             cells = {k: None for k in HORIZONS + ['hi']}
         r['cells'] = cells
+        r['cal'] = {k: None for k in r_keys(cal)} if unconf else measure_calendar(tr, cal, 'etf')
         rows.append(r)
 
     for rt in cfg['rates']:
@@ -158,7 +223,7 @@ def main():
             s = [x for x in s if x[0] <= as_of.isoformat()]
         end, cells = measure(s, as_of, 'rate')
         r = {'kind': 'rate', 'layer': rt['layer'], 'id': rt['id'], 'name': rt['name'], 'ticker': rt['code'],
-             'flags': [], 'status': 'ok', 'cells': cells}
+             'flags': [], 'status': 'ok', 'cells': cells, 'cal': measure_calendar(s, cal, 'rate')}
         if end:
             r.update(last_date=end[0], level=end[1])
             if (as_of - datetime.date.fromisoformat(end[0])).days >= STALE_DAYS + 2:  # publication lag
@@ -193,7 +258,7 @@ def main():
     out = {'as_of': as_of.isoformat(), 'built': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
            'build_run': build.get('run'), 'horizons': HORIZONS, 'pending_days': pending,
            'starts': {h: s.isoformat() for h, s in starts(as_of).items()},
-           'rows': rows, 'relationships': pairs, 'bad_prints': excluded,
+           'calendar': cal, 'rows': rows, 'relationships': pairs, 'bad_prints': excluded,
            'counts': {s: sum(r['status'] == s for r in rows) for s in ('ok', 'check')}}
     os.makedirs(OUT, exist_ok=True)
     json.dump(out, open(os.path.join(OUT, 'view.json'), 'w'), indent=1)

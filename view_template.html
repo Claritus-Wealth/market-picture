@@ -117,6 +117,11 @@
   <div class="tablewrap"><table id="etf"></table></div>
   <div class="key"><span>fell</span><span class="bar" aria-hidden="true"></span><span>rose</span><span style="color:var(--ink-3)">· shade scales with the size of the move for that period; the sign is always printed</span></div>
 
+  <h2>Month-ends and quarter-ends</h2>
+  <p class="lede">The same total return, but for whole calendar months and quarters: each figure runs from the last close on or before one month-end (or quarter-end) to the last close on or before the next, so it lines up with platform valuation dates and quarter-end reports. Rates show the change in basis points. A month appears once its last weekday has closed.</p>
+  <div class="filters"><div class="fgroup" role="group" aria-label="Calendar periods"><span class="lbl">Show</span><span id="cal-buttons"></span></div></div>
+  <div class="tablewrap"><table id="cal"></table></div>
+
   <h2>Rates</h2>
   <p class="lede">Yield in percent; changes in basis points (100 bp = 1 percentage point). Blue means the yield rose, which is a fall in bond prices.</p>
   <div class="tablewrap"><table id="rates"></table></div>
@@ -222,6 +227,30 @@ function drawEtf(){
   });
 }
 drawEtf();
+
+// calendar grid: months or quarters, market lines by layer then rates
+let calMode = 'months';
+function calCell(c, kind, who, p){
+  if (!c) return `<td class="c na" title="${esc(who)}: no figure for ${esc(p.label)}">–</td>`;
+  const h = calMode === 'months' ? '1m' : '3m';
+  const txt = kind === 'etf' ? fmtPct(c.v, h) : fmtBp(c.v);
+  return `<td class="c" style="background:${shade(c.v, h, kind)}" title="${esc(who)} · ${esc(p.label)}: ${txt}${kind === 'etf' ? '%' : ' bp'} · ${d8(c.from)} to ${d8(c.to)}">${txt}</td>`;
+}
+function drawCal(){
+  const ps = DATA.calendar[calMode];
+  let body = '', layer = null;
+  for (const r of DATA.rows){
+    if (r.layer !== layer){ layer = r.layer; body += `<tr class="layer"><td colspan="${ps.length + 1}">${esc(layer.replace(/^\d+ /,''))}${r.kind === 'rate' ? ' (change, bp)' : ''}</td></tr>`; }
+    body += '<tr>' + nameCell(r, false) + ps.map(p => calCell((r.cal || {})[p.key], r.kind, r.name, p)).join('') + '</tr>';
+  }
+  document.getElementById('cal').innerHTML = '<thead><tr><th class="name" scope="col">Series</th>'
+    + ps.map(p => `<th scope="col">${esc(calMode === 'months' ? p.label.replace(' 20', ' ’') : p.label)}</th>`).join('') + '</tr></thead><tbody>' + body + '</tbody>';
+  document.querySelectorAll('#cal-buttons button').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === calMode));
+}
+document.getElementById('cal-buttons').innerHTML = [['months','Last 12 months'],['quarters','Last 4 quarters']]
+  .map(([m, l]) => `<button class="seg" data-m="${m}" aria-pressed="false">${l}</button>`).join('');
+document.querySelectorAll('#cal-buttons button').forEach(b => b.onclick = () => { calMode = b.dataset.m; drawCal(); });
+if (DATA.calendar) drawCal();
 
 // rates table
 const rates = DATA.rows.filter(r => r.kind === 'rate');

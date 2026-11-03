@@ -69,3 +69,22 @@ ETF rows dated today are skipped before 17:00 London so an intraday price is nev
 anyone with the link (public market data; the repository is public anyway). The daily workflow publishes
 the `view/` folder only, after each build; if the view fails to build, nothing is published and the last
 good page stays up. `view/apple-touch-icon.png` is the Home Screen icon on iPhone and iPad.
+
+## 3 Nov 2026 - corrected Asia line, six new lines, month-end and quarter-end grid
+
+- **Asia corrected.** CPJ1 (MSCI Pacific ex Japan) is Australia, Hong Kong, Singapore and NZ only, and is now
+  labelled so. The Asia Pacific ex Japan *index funds* commonly held track FTSE World Asia-Pacific ex-Japan,
+  which is heavy in Korea and Taiwan and holds no China. No London ETF tracks that index, so three lines were
+  added: VAPX (FTSE Developed Asia Pacific ex Japan: includes Korea, not Taiwan), IKOR (Korea), ITWN (Taiwan).
+  Test, October 2026: VAPX -9.19% against -9.42% for a FTSE World Asia-Pacific ex-Japan index fund; CPJ1 +0.03%.
+  Rejected: Amundi MSCI AC Asia Pacific ex Japan (AEJL: includes China, thin trading, -8.49%).
+- **Lines for holdings that had none:** TI5G (US inflation-linked 0-5 years, GBP hedged), AT1S (bank AT1 / CoCo
+  bonds, GBP hedged), EHYG (euro high yield, BB-rated, GBP hedged; history from Apr 2023).
+  **No line for the largest global companies:** UBS MSCI World Mega Cap (WOMC) was tried and rejected - Yahoo
+  stores its prices in pence and pounds by turns before 29 Jul 2026 (100x jumps), and it barely trades. With an
+  append-only history a broken backfill would be kept for good.
+- **Month-ends and quarter-ends:** `build_view.py` adds the last 12 completed calendar months and last 4
+  completed quarters (`calendar` and each row's `cal` in `view.json`), month-end to month-end on the same
+  total-return basis and bad-price rule. A month counts once its last weekday has closed. Shown on the page under
+  "Month-ends and quarter-ends", with a months / quarters switch.
+- Still market data only: nothing about any portfolio is held in this repository.
