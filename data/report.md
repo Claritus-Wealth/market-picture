@@ -1,4 +1,4 @@
-# Market Picture daily build - 2026-11-03 (2026-11-03 18:59 UTC)
+# Market Picture daily build - 2026-11-04 (2026-11-04 01:33 UTC)
 
 **51 ok, 0 to check, 0 failed, of 51 series.** ETF prices up to 2026-11-03.
 
@@ -41,7 +41,7 @@
 | 6 Bonds | EM debt, hard currency (GBP hedged) | EMHG | ok | yfinance | 2026-11-03 | £3.6760 | -0.24% | 0 | 2018-03-21 |  |
 | 6 Bonds | Global aggregate bonds (GBP hedged) | AGBP | ok | yfinance | 2026-11-03 | £4.5380 | -0.30% | 0 | 2017-11-21 |  |
 | 6 Bonds | Short-dated US inflation-linked 0-5 years (GBP hedged) | TI5G | ok | yfinance | 2026-11-03 | £4.6940 | -0.21% | 0 | 2018-03-05 |  |
-| 6 Bonds | Global inflation-linked government bonds (GBP hedged) | XGIG | ok | yfinance | 2026-11-03 | £24.7275 | -0.37% | 3773 | 2011-11-25 |  |
+| 6 Bonds | Global inflation-linked government bonds (GBP hedged) | XGIG | ok | yfinance | 2026-11-03 | £24.7275 | -0.37% | 0 | 2011-11-25 |  |
 | 6 Bonds | Bank AT1 / CoCo bonds (GBP hedged) | AT1S | ok | yfinance | 2026-11-03 | £34.1255 | +0.06% | 0 | 2018-09-25 |  |
 | 6 Bonds | Euro high yield, BB-rated (GBP hedged; history from Apr 2023) | EHYG | ok | yfinance | 2026-11-03 | £6.3860 | +0.21% | 0 | 2023-04-28 |  |
 | 8 Real assets | Developed markets property | IWDP | ok | yfinance | 2026-11-03 | £18.4600 | -0.05% | 0 | 2009-01-02 |  |
@@ -53,5 +53,5 @@
 | 7 Rates | 5-year real gilt yield (zero coupon) | IUDSRZC | ok | boe-iadb | 2026-10-30 | 1.29% | +0.7bp | 0 | 2000-01-04 |  |
 | 7 Rates | 10-year real gilt yield (zero coupon) | IUDMRZC | ok | boe-iadb | 2026-10-30 | 1.95% | +1.6bp | 0 | 2000-01-04 |  |
 | 7 Rates | 20-year real gilt yield (zero coupon) | IUDLRZC | ok | boe-iadb | 2026-10-30 | 2.43% | +2.8bp | 0 | 2000-01-04 |  |
-| 7 Rates | US 10-year Treasury yield | DGS10 | ok | us-treasury | 2026-11-02 | 4.91% | -3.0bp | 0 | 2000-01-03 |  |
-| 7 Rates | US 2-year Treasury yield | DGS2 | ok | us-treasury | 2026-11-02 | 4.59% | +3.0bp | 0 | 2000-01-03 |  |
+| 7 Rates | US 10-year Treasury yield | DGS10 | ok | us-treasury | 2026-11-03 | 4.95% | +4.0bp | 1 | 2000-01-03 |  |
+| 7 Rates | US 2-year Treasury yield | DGS2 | ok | us-treasury | 2026-11-03 | 4.61% | +2.0bp | 1 | 2000-01-03 |  |
