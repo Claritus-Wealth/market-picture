@@ -1,7 +1,7 @@
 {
- "date": "2026-11-04",
- "run": "2026-11-04 01:33 UTC",
- "etf_cutoff": "2026-11-03",
+ "date": "2026-11-05",
+ "run": "2026-11-05 01:36 UTC",
+ "etf_cutoff": "2026-11-04",
  "results": [
   {
    "kind": "etf",
@@ -21,7 +21,7 @@
    "last_date": "2026-11-03",
    "last_value": 107.57,
    "n": 4321,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.821
   },
@@ -43,7 +43,7 @@
    "last_date": "2026-11-03",
    "last_value": 89.82,
    "n": 3796,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.883
   },
@@ -65,7 +65,7 @@
    "last_date": "2026-11-03",
    "last_value": 37.3,
    "n": 3135,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.635
   },
@@ -87,7 +87,7 @@
    "last_date": "2026-11-03",
    "last_value": 10.35,
    "n": 4506,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.146
   },
@@ -109,7 +109,7 @@
    "last_date": "2026-11-03",
    "last_value": 92.639999,
    "n": 3708,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.205
   },
@@ -131,7 +131,7 @@
    "last_date": "2026-11-03",
    "last_value": 609.1,
    "n": 4157,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.777
   },
@@ -153,7 +153,7 @@
    "last_date": "2026-11-03",
    "last_value": 41.490002,
    "n": 3055,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.575
   },
@@ -175,7 +175,7 @@
    "last_date": "2026-11-03",
    "last_value": 59.78,
    "n": 4321,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.813
   },
@@ -197,7 +197,7 @@
    "last_date": "2026-11-03",
    "last_value": 181.06,
    "n": 4246,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.222
   },
@@ -219,7 +219,7 @@
    "last_date": "2026-11-03",
    "last_value": 31.09,
    "n": 3400,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.082
   },
@@ -241,7 +241,7 @@
    "last_date": "2026-11-03",
    "last_value": 83.3475,
    "n": 4501,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.51
   },
@@ -263,7 +263,7 @@
    "last_date": "2026-11-03",
    "last_value": 135.74,
    "n": 4505,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -3.628
   },
@@ -285,7 +285,7 @@
    "last_date": "2026-11-03",
    "last_value": 22.765,
    "n": 4506,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.459
   },
@@ -307,7 +307,7 @@
    "last_date": "2026-11-03",
    "last_value": 58.01,
    "n": 3051,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.905
   },
@@ -329,7 +329,7 @@
    "last_date": "2026-11-03",
    "last_value": 66.93,
    "n": 3051,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.668
   },
@@ -351,7 +351,7 @@
    "last_date": "2026-11-03",
    "last_value": 79.56,
    "n": 3051,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.983
   },
@@ -373,7 +373,7 @@
    "last_date": "2026-11-03",
    "last_value": 7.658,
    "n": 2173,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.429
   },
@@ -395,7 +395,7 @@
    "last_date": "2026-11-03",
    "last_value": 1206.3,
    "n": 4230,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.406
   },
@@ -417,7 +417,7 @@
    "last_date": "2026-11-03",
    "last_value": 103.080002,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.453
   },
@@ -439,7 +439,7 @@
    "last_date": "2026-11-03",
    "last_value": 50.34,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": 0.259
   },
@@ -461,7 +461,7 @@
    "last_date": "2026-11-03",
    "last_value": 60.23,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.697
   },
@@ -483,7 +483,7 @@
    "last_date": "2026-11-03",
    "last_value": 35.445,
    "n": 3966,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.351
   },
@@ -505,7 +505,7 @@
    "last_date": "2026-11-03",
    "last_value": 62.200001,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": 0.282
   },
@@ -527,7 +527,7 @@
    "last_date": "2026-11-03",
    "last_value": 43.974998,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.577
   },
@@ -549,7 +549,7 @@
    "last_date": "2026-11-03",
    "last_value": 50.455002,
    "n": 3720,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.32
   },
@@ -573,7 +573,7 @@
    "last_date": "2026-11-03",
    "last_value": 35.6875,
    "n": 3995,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": 0.225
   },
@@ -595,7 +595,7 @@
    "last_date": "2026-11-03",
    "last_value": 57.075001,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -1.722
   },
@@ -617,7 +617,7 @@
    "last_date": "2026-11-03",
    "last_value": 22.387501,
    "n": 3719,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.167
   },
@@ -639,7 +639,7 @@
    "last_date": "2026-11-03",
    "last_value": 125.68,
    "n": 4434,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.064
   },
@@ -661,7 +661,7 @@
    "last_date": "2026-11-03",
    "last_value": 9.66,
    "n": 4760,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.361
   },
@@ -683,7 +683,7 @@
    "last_date": "2026-11-03",
    "last_value": 33.299999,
    "n": 3654,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.597
   },
@@ -705,7 +705,7 @@
    "last_date": "2026-11-03",
    "last_value": 10.988,
    "n": 4760,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.902
   },
@@ -727,7 +727,7 @@
    "last_date": "2026-11-03",
    "last_value": 117.730003,
    "n": 4760,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.398
   },
@@ -749,7 +749,7 @@
    "last_date": "2026-11-03",
    "last_value": 85.769997,
    "n": 3358,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": 0.023
   },
@@ -771,7 +771,7 @@
    "last_date": "2026-11-03",
    "last_value": 3.676,
    "n": 2178,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.244
   },
@@ -793,7 +793,7 @@
    "last_date": "2026-11-03",
    "last_value": 4.538,
    "n": 2261,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.297
   },
@@ -815,7 +815,7 @@
    "last_date": "2026-11-03",
    "last_value": 4.694,
    "n": 2190,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.213
   },
@@ -837,7 +837,7 @@
    "last_date": "2026-11-03",
    "last_value": 24.7275,
    "n": 3773,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.373
   },
@@ -859,7 +859,7 @@
    "last_date": "2026-11-03",
    "last_value": 34.125476,
    "n": 2048,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": 0.061
   },
@@ -881,7 +881,7 @@
    "last_date": "2026-11-03",
    "last_value": 6.386,
    "n": 890,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": 0.212
   },
@@ -903,7 +903,7 @@
    "last_date": "2026-11-03",
    "last_value": 18.46,
    "n": 4505,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -0.054
   },
@@ -925,7 +925,7 @@
    "last_date": "2026-11-03",
    "last_value": 66.099998,
    "n": 2372,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-02",
    "change_pct": -2.06
   },
@@ -938,14 +938,14 @@
    "code": "IUDBEDR",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-02",
+   "last_date": "2026-11-03",
    "last_value": 3.75,
-   "n": 6781,
+   "n": 6782,
    "age_days": 2,
-   "prev_date": "2026-10-30",
+   "prev_date": "2026-11-02",
    "change_bp": 0.0
   },
   {
@@ -957,15 +957,15 @@
    "code": "IUDMNPY",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-10-30",
-   "last_value": 5.2497,
-   "n": 6780,
-   "age_days": 5,
-   "prev_date": "2026-10-29",
-   "change_bp": -0.9
+   "last_date": "2026-11-02",
+   "last_value": 5.1677,
+   "n": 6781,
+   "age_days": 3,
+   "prev_date": "2026-10-30",
+   "change_bp": -8.2
   },
   {
    "kind": "rate",
@@ -976,15 +976,15 @@
    "code": "IUDSNPY",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-10-30",
-   "last_value": 4.8939,
-   "n": 6780,
-   "age_days": 5,
-   "prev_date": "2026-10-29",
-   "change_bp": -1.2
+   "last_date": "2026-11-02",
+   "last_value": 4.8165,
+   "n": 6781,
+   "age_days": 3,
+   "prev_date": "2026-10-30",
+   "change_bp": -7.7
   },
   {
    "kind": "rate",
@@ -995,15 +995,15 @@
    "code": "IUDLNPY",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-10-30",
-   "last_value": 5.5535,
-   "n": 6780,
-   "age_days": 5,
-   "prev_date": "2026-10-29",
-   "change_bp": 0.8
+   "last_date": "2026-11-02",
+   "last_value": 5.4715,
+   "n": 6781,
+   "age_days": 3,
+   "prev_date": "2026-10-30",
+   "change_bp": -8.2
   },
   {
    "kind": "rate",
@@ -1014,15 +1014,15 @@
    "code": "IUDSRZC",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-10-30",
-   "last_value": 1.2896,
-   "n": 6780,
-   "age_days": 5,
-   "prev_date": "2026-10-29",
-   "change_bp": 0.7
+   "last_date": "2026-11-02",
+   "last_value": 1.3186,
+   "n": 6781,
+   "age_days": 3,
+   "prev_date": "2026-10-30",
+   "change_bp": 2.9
   },
   {
    "kind": "rate",
@@ -1033,15 +1033,15 @@
    "code": "IUDMRZC",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-10-30",
-   "last_value": 1.9537,
-   "n": 6780,
-   "age_days": 5,
-   "prev_date": "2026-10-29",
-   "change_bp": 1.6
+   "last_date": "2026-11-02",
+   "last_value": 1.9306,
+   "n": 6781,
+   "age_days": 3,
+   "prev_date": "2026-10-30",
+   "change_bp": -2.3
   },
   {
    "kind": "rate",
@@ -1052,15 +1052,15 @@
    "code": "IUDLRZC",
    "flags": [],
    "status": "ok",
-   "added": 0,
+   "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-10-30",
-   "last_value": 2.4297,
-   "n": 6780,
-   "age_days": 5,
-   "prev_date": "2026-10-29",
-   "change_bp": 2.8
+   "last_date": "2026-11-02",
+   "last_value": 2.3914,
+   "n": 6781,
+   "age_days": 3,
+   "prev_date": "2026-10-30",
+   "change_bp": -3.8
   },
   {
    "kind": "rate",
@@ -1074,12 +1074,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-03",
-   "last_date": "2026-11-03",
-   "last_value": 4.95,
-   "n": 6713,
+   "last_date": "2026-11-04",
+   "last_value": 4.9,
+   "n": 6714,
    "age_days": 1,
-   "prev_date": "2026-11-02",
-   "change_bp": 4.0
+   "prev_date": "2026-11-03",
+   "change_bp": -5.0
   },
   {
    "kind": "rate",
@@ -1093,12 +1093,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-03",
-   "last_date": "2026-11-03",
-   "last_value": 4.61,
-   "n": 6713,
+   "last_date": "2026-11-04",
+   "last_value": 4.58,
+   "n": 6714,
    "age_days": 1,
-   "prev_date": "2026-11-02",
-   "change_bp": 2.0
+   "prev_date": "2026-11-03",
+   "change_bp": -3.0
   }
  ]
 }

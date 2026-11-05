@@ -1,6 +1,6 @@
-# Market Picture daily build - 2026-11-04 (2026-11-04 01:33 UTC)
+# Market Picture daily build - 2026-11-05 (2026-11-05 01:36 UTC)
 
-**51 ok, 0 to check, 0 failed, of 51 series.** ETF prices up to 2026-11-03.
+**51 ok, 0 to check, 0 failed, of 51 series.** ETF prices up to 2026-11-04.
 
 | Layer | Series | Ticker/code | Status | Source | Last date | Last | Change | Added | Stored from | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -46,12 +46,12 @@
 | 6 Bonds | Euro high yield, BB-rated (GBP hedged; history from Apr 2023) | EHYG | ok | yfinance | 2026-11-03 | £6.3860 | +0.21% | 0 | 2023-04-28 |  |
 | 8 Real assets | Developed markets property | IWDP | ok | yfinance | 2026-11-03 | £18.4600 | -0.05% | 0 | 2009-01-02 |  |
 | 8 Real assets | Gold miners | GDGB | ok | yfinance | 2026-11-03 | £66.1000 | -2.06% | 0 | 2017-06-14 |  |
-| 7 Rates | Bank Rate | IUDBEDR | ok | boe-iadb | 2026-11-02 | 3.75% | +0.0bp | 0 | 2000-01-04 |  |
-| 7 Rates | 10-year gilt nominal par yield | IUDMNPY | ok | boe-iadb | 2026-10-30 | 5.25% | -0.9bp | 0 | 2000-01-04 |  |
-| 7 Rates | 5-year gilt nominal par yield | IUDSNPY | ok | boe-iadb | 2026-10-30 | 4.89% | -1.2bp | 0 | 2000-01-04 |  |
-| 7 Rates | 20-year gilt nominal par yield | IUDLNPY | ok | boe-iadb | 2026-10-30 | 5.55% | +0.8bp | 0 | 2000-01-04 |  |
-| 7 Rates | 5-year real gilt yield (zero coupon) | IUDSRZC | ok | boe-iadb | 2026-10-30 | 1.29% | +0.7bp | 0 | 2000-01-04 |  |
-| 7 Rates | 10-year real gilt yield (zero coupon) | IUDMRZC | ok | boe-iadb | 2026-10-30 | 1.95% | +1.6bp | 0 | 2000-01-04 |  |
-| 7 Rates | 20-year real gilt yield (zero coupon) | IUDLRZC | ok | boe-iadb | 2026-10-30 | 2.43% | +2.8bp | 0 | 2000-01-04 |  |
-| 7 Rates | US 10-year Treasury yield | DGS10 | ok | us-treasury | 2026-11-03 | 4.95% | +4.0bp | 1 | 2000-01-03 |  |
-| 7 Rates | US 2-year Treasury yield | DGS2 | ok | us-treasury | 2026-11-03 | 4.61% | +2.0bp | 1 | 2000-01-03 |  |
+| 7 Rates | Bank Rate | IUDBEDR | ok | boe-iadb | 2026-11-03 | 3.75% | +0.0bp | 1 | 2000-01-04 |  |
+| 7 Rates | 10-year gilt nominal par yield | IUDMNPY | ok | boe-iadb | 2026-11-02 | 5.17% | -8.2bp | 1 | 2000-01-04 |  |
+| 7 Rates | 5-year gilt nominal par yield | IUDSNPY | ok | boe-iadb | 2026-11-02 | 4.82% | -7.7bp | 1 | 2000-01-04 |  |
+| 7 Rates | 20-year gilt nominal par yield | IUDLNPY | ok | boe-iadb | 2026-11-02 | 5.47% | -8.2bp | 1 | 2000-01-04 |  |
+| 7 Rates | 5-year real gilt yield (zero coupon) | IUDSRZC | ok | boe-iadb | 2026-11-02 | 1.32% | +2.9bp | 1 | 2000-01-04 |  |
+| 7 Rates | 10-year real gilt yield (zero coupon) | IUDMRZC | ok | boe-iadb | 2026-11-02 | 1.93% | -2.3bp | 1 | 2000-01-04 |  |
+| 7 Rates | 20-year real gilt yield (zero coupon) | IUDLRZC | ok | boe-iadb | 2026-11-02 | 2.39% | -3.8bp | 1 | 2000-01-04 |  |
+| 7 Rates | US 10-year Treasury yield | DGS10 | ok | us-treasury | 2026-11-04 | 4.90% | -5.0bp | 1 | 2000-01-03 |  |
+| 7 Rates | US 2-year Treasury yield | DGS2 | ok | us-treasury | 2026-11-04 | 4.58% | -3.0bp | 1 | 2000-01-03 |  |
