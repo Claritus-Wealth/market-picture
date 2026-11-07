@@ -1,7 +1,7 @@
 {
- "date": "2026-11-06",
- "run": "2026-11-06 01:42 UTC",
- "etf_cutoff": "2026-11-05",
+ "date": "2026-11-07",
+ "run": "2026-11-07 01:02 UTC",
+ "etf_cutoff": "2026-11-06",
  "results": [
   {
    "kind": "etf",
@@ -18,12 +18,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-09-25",
-   "last_date": "2026-11-04",
-   "last_value": 108.8,
-   "n": 4322,
+   "last_date": "2026-11-05",
+   "last_value": 106.37,
+   "n": 4323,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.143
+   "prev_date": "2026-11-04",
+   "change_pct": -2.233
   },
   {
    "kind": "etf",
@@ -40,12 +40,12 @@
    "added": 1,
    "revisions": [],
    "first": "2011-10-21",
-   "last_date": "2026-11-04",
-   "last_value": 90.77,
-   "n": 3797,
+   "last_date": "2026-11-05",
+   "last_value": 88.55,
+   "n": 3798,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.058
+   "prev_date": "2026-11-04",
+   "change_pct": -2.446
   },
   {
    "kind": "etf",
@@ -62,12 +62,12 @@
    "added": 1,
    "revisions": [],
    "first": "2014-06-09",
-   "last_date": "2026-11-04",
-   "last_value": 37.58,
-   "n": 3136,
+   "last_date": "2026-11-05",
+   "last_value": 36.06,
+   "n": 3137,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.751
+   "prev_date": "2026-11-04",
+   "change_pct": -4.045
   },
   {
    "kind": "etf",
@@ -84,12 +84,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 10.532,
-   "n": 4507,
+   "last_date": "2026-11-05",
+   "last_value": 10.51,
+   "n": 4508,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.758
+   "prev_date": "2026-11-04",
+   "change_pct": -0.209
   },
   {
    "kind": "etf",
@@ -106,12 +106,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-02-28",
-   "last_date": "2026-11-04",
-   "last_value": 94.300003,
-   "n": 3709,
+   "last_date": "2026-11-05",
+   "last_value": 93.949997,
+   "n": 3710,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.792
+   "prev_date": "2026-11-04",
+   "change_pct": -0.371
   },
   {
    "kind": "etf",
@@ -128,12 +128,12 @@
    "added": 1,
    "revisions": [],
    "first": "2010-05-19",
-   "last_date": "2026-11-04",
-   "last_value": 615.71,
-   "n": 4158,
+   "last_date": "2026-11-05",
+   "last_value": 598.7,
+   "n": 4159,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.085
+   "prev_date": "2026-11-04",
+   "change_pct": -2.763
   },
   {
    "kind": "etf",
@@ -150,12 +150,12 @@
    "added": 1,
    "revisions": [],
    "first": "2014-09-30",
-   "last_date": "2026-11-04",
-   "last_value": 42.240002,
-   "n": 3056,
+   "last_date": "2026-11-05",
+   "last_value": 42.035,
+   "n": 3057,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.808
+   "prev_date": "2026-11-04",
+   "change_pct": -0.485
   },
   {
    "kind": "etf",
@@ -172,12 +172,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-09-25",
-   "last_date": "2026-11-04",
-   "last_value": 59.93,
-   "n": 4322,
+   "last_date": "2026-11-05",
+   "last_value": 58.2,
+   "n": 4323,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.251
+   "prev_date": "2026-11-04",
+   "change_pct": -2.887
   },
   {
    "kind": "etf",
@@ -194,12 +194,12 @@
    "added": 1,
    "revisions": [],
    "first": "2010-01-12",
-   "last_date": "2026-11-04",
-   "last_value": 184.37,
-   "n": 4247,
+   "last_date": "2026-11-05",
+   "last_value": 183.17,
+   "n": 4248,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.828
+   "prev_date": "2026-11-04",
+   "change_pct": -0.651
   },
   {
    "kind": "etf",
@@ -216,12 +216,12 @@
    "added": 1,
    "revisions": [],
    "first": "2013-05-21",
-   "last_date": "2026-11-04",
-   "last_value": 31.0525,
-   "n": 3401,
+   "last_date": "2026-11-05",
+   "last_value": 29.385,
+   "n": 3402,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -0.121
+   "prev_date": "2026-11-04",
+   "change_pct": -5.37
   },
   {
    "kind": "etf",
@@ -238,12 +238,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 82.08,
-   "n": 4502,
+   "last_date": "2026-11-05",
+   "last_value": 74.8975,
+   "n": 4503,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -1.521
+   "prev_date": "2026-11-04",
+   "change_pct": -8.751
   },
   {
    "kind": "etf",
@@ -260,12 +260,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 133.02,
-   "n": 4506,
+   "last_date": "2026-11-05",
+   "last_value": 120.82,
+   "n": 4507,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -2.004
+   "prev_date": "2026-11-04",
+   "change_pct": -9.172
   },
   {
    "kind": "etf",
@@ -282,12 +282,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 22.98,
-   "n": 4507,
+   "last_date": "2026-11-05",
+   "last_value": 22.815,
+   "n": 4508,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.944
+   "prev_date": "2026-11-04",
+   "change_pct": -0.718
   },
   {
    "kind": "etf",
@@ -304,12 +304,12 @@
    "added": 1,
    "revisions": [],
    "first": "2014-10-06",
-   "last_date": "2026-11-04",
-   "last_value": 58.28,
-   "n": 3052,
+   "last_date": "2026-11-05",
+   "last_value": 56.83,
+   "n": 3053,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.465
+   "prev_date": "2026-11-04",
+   "change_pct": -2.488
   },
   {
    "kind": "etf",
@@ -326,12 +326,12 @@
    "added": 1,
    "revisions": [],
    "first": "2014-10-06",
-   "last_date": "2026-11-04",
-   "last_value": 67.94,
-   "n": 3052,
+   "last_date": "2026-11-05",
+   "last_value": 66.64,
+   "n": 3053,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.509
+   "prev_date": "2026-11-04",
+   "change_pct": -1.913
   },
   {
    "kind": "etf",
@@ -348,12 +348,12 @@
    "added": 1,
    "revisions": [],
    "first": "2014-10-06",
-   "last_date": "2026-11-04",
-   "last_value": 78.3,
-   "n": 3052,
+   "last_date": "2026-11-05",
+   "last_value": 74.99,
+   "n": 3053,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -1.584
+   "prev_date": "2026-11-04",
+   "change_pct": -4.227
   },
   {
    "kind": "etf",
@@ -370,12 +370,12 @@
    "added": 1,
    "revisions": [],
    "first": "2018-03-27",
-   "last_date": "2026-11-04",
-   "last_value": 7.675,
-   "n": 2174,
+   "last_date": "2026-11-05",
+   "last_value": 7.545,
+   "n": 2175,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.222
+   "prev_date": "2026-11-04",
+   "change_pct": -1.694
   },
   {
    "kind": "etf",
@@ -392,12 +392,12 @@
    "added": 1,
    "revisions": [],
    "first": "2010-01-26",
-   "last_date": "2026-11-04",
-   "last_value": 1215.5,
-   "n": 4231,
+   "last_date": "2026-11-05",
+   "last_value": 1158.1,
+   "n": 4232,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.763
+   "prev_date": "2026-11-04",
+   "change_pct": -4.722
   },
   {
    "kind": "etf",
@@ -414,12 +414,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 103.639999,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 97.639999,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.543
+   "prev_date": "2026-11-04",
+   "change_pct": -5.789
   },
   {
    "kind": "etf",
@@ -436,12 +436,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 51.02,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 51.009998,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.351
+   "prev_date": "2026-11-04",
+   "change_pct": -0.02
   },
   {
    "kind": "etf",
@@ -458,12 +458,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 57.459999,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 57.310001,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -4.599
+   "prev_date": "2026-11-04",
+   "change_pct": -0.261
   },
   {
    "kind": "etf",
@@ -480,12 +480,12 @@
    "added": 1,
    "revisions": [],
    "first": "2011-01-04",
-   "last_date": "2026-11-04",
-   "last_value": 36.205002,
-   "n": 3967,
+   "last_date": "2026-11-05",
+   "last_value": 35.869999,
+   "n": 3968,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 2.144
+   "prev_date": "2026-11-04",
+   "change_pct": -0.925
   },
   {
    "kind": "etf",
@@ -502,12 +502,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 61.345001,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 60.25,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -1.375
+   "prev_date": "2026-11-04",
+   "change_pct": -1.785
   },
   {
    "kind": "etf",
@@ -524,12 +524,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 45.014999,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 45.044998,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 2.365
+   "prev_date": "2026-11-04",
+   "change_pct": 0.067
   },
   {
    "kind": "etf",
@@ -546,12 +546,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 52.169998,
-   "n": 3721,
+   "last_date": "2026-11-05",
+   "last_value": 51.084999,
+   "n": 3722,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 3.399
+   "prev_date": "2026-11-04",
+   "change_pct": -2.08
   },
   {
    "kind": "etf",
@@ -570,12 +570,12 @@
    "added": 1,
    "revisions": [],
    "first": "2010-11-22",
-   "last_date": "2026-11-04",
-   "last_value": 35.747501,
-   "n": 3996,
+   "last_date": "2026-11-05",
+   "last_value": 35.715,
+   "n": 3997,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.168
+   "prev_date": "2026-11-04",
+   "change_pct": -0.091
   },
   {
    "kind": "etf",
@@ -592,12 +592,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 58.099998,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 58.145,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.796
+   "prev_date": "2026-11-04",
+   "change_pct": 0.077
   },
   {
    "kind": "etf",
@@ -614,12 +614,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-01-03",
-   "last_date": "2026-11-04",
-   "last_value": 22.952499,
-   "n": 3720,
+   "last_date": "2026-11-05",
+   "last_value": 22.719999,
+   "n": 3721,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 2.524
+   "prev_date": "2026-11-04",
+   "change_pct": -1.013
   },
   {
    "kind": "etf",
@@ -636,12 +636,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-04-17",
-   "last_date": "2026-11-04",
-   "last_value": 125.980003,
-   "n": 4435,
+   "last_date": "2026-11-05",
+   "last_value": 126.029999,
+   "n": 4436,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.239
+   "prev_date": "2026-11-04",
+   "change_pct": 0.04
   },
   {
    "kind": "etf",
@@ -658,12 +658,12 @@
    "added": 1,
    "revisions": [],
    "first": "2008-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 9.7275,
-   "n": 4761,
+   "last_date": "2026-11-05",
+   "last_value": 9.7375,
+   "n": 4762,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.699
+   "prev_date": "2026-11-04",
+   "change_pct": 0.103
   },
   {
    "kind": "etf",
@@ -680,12 +680,12 @@
    "added": 1,
    "revisions": [],
    "first": "2012-05-17",
-   "last_date": "2026-11-04",
-   "last_value": 33.779999,
-   "n": 3655,
+   "last_date": "2026-11-05",
+   "last_value": 33.735001,
+   "n": 3656,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.441
+   "prev_date": "2026-11-04",
+   "change_pct": -0.133
   },
   {
    "kind": "etf",
@@ -702,12 +702,12 @@
    "added": 1,
    "revisions": [],
    "first": "2008-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 11.09,
-   "n": 4761,
+   "last_date": "2026-11-05",
+   "last_value": 11.126,
+   "n": 4762,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.928
+   "prev_date": "2026-11-04",
+   "change_pct": 0.325
   },
   {
    "kind": "etf",
@@ -724,12 +724,12 @@
    "added": 1,
    "revisions": [],
    "first": "2008-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 118.599998,
-   "n": 4761,
+   "last_date": "2026-11-05",
+   "last_value": 118.410004,
+   "n": 4762,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.739
+   "prev_date": "2026-11-04",
+   "change_pct": -0.16
   },
   {
    "kind": "etf",
@@ -746,12 +746,12 @@
    "added": 1,
    "revisions": [],
    "first": "2013-06-25",
-   "last_date": "2026-11-04",
-   "last_value": 85.669998,
-   "n": 3359,
+   "last_date": "2026-11-05",
+   "last_value": 86.370003,
+   "n": 3360,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -0.117
+   "prev_date": "2026-11-04",
+   "change_pct": 0.817
   },
   {
    "kind": "etf",
@@ -768,12 +768,12 @@
    "added": 1,
    "revisions": [],
    "first": "2018-03-21",
-   "last_date": "2026-11-04",
-   "last_value": 3.7,
-   "n": 2179,
+   "last_date": "2026-11-05",
+   "last_value": 3.691,
+   "n": 2180,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.653
+   "prev_date": "2026-11-04",
+   "change_pct": -0.243
   },
   {
    "kind": "etf",
@@ -790,12 +790,12 @@
    "added": 1,
    "revisions": [],
    "first": "2017-11-21",
-   "last_date": "2026-11-04",
-   "last_value": 4.5565,
-   "n": 2262,
+   "last_date": "2026-11-05",
+   "last_value": 4.5645,
+   "n": 2263,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.408
+   "prev_date": "2026-11-04",
+   "change_pct": 0.176
   },
   {
    "kind": "etf",
@@ -812,12 +812,12 @@
    "added": 1,
    "revisions": [],
    "first": "2018-03-05",
-   "last_date": "2026-11-04",
-   "last_value": 4.691,
-   "n": 2191,
+   "last_date": "2026-11-05",
+   "last_value": 4.6915,
+   "n": 2192,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": -0.064
+   "prev_date": "2026-11-04",
+   "change_pct": 0.011
   },
   {
    "kind": "etf",
@@ -834,12 +834,12 @@
    "added": 1,
    "revisions": [],
    "first": "2011-11-25",
-   "last_date": "2026-11-04",
-   "last_value": 24.845,
-   "n": 3774,
+   "last_date": "2026-11-05",
+   "last_value": 24.775,
+   "n": 3775,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.475
+   "prev_date": "2026-11-04",
+   "change_pct": -0.282
   },
   {
    "kind": "etf",
@@ -856,12 +856,12 @@
    "added": 1,
    "revisions": [],
    "first": "2018-09-25",
-   "last_date": "2026-11-04",
-   "last_value": 34.372939,
-   "n": 2049,
+   "last_date": "2026-11-05",
+   "last_value": 34.405669,
+   "n": 2050,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.725
+   "prev_date": "2026-11-04",
+   "change_pct": 0.095
   },
   {
    "kind": "etf",
@@ -878,12 +878,12 @@
    "added": 1,
    "revisions": [],
    "first": "2023-04-28",
-   "last_date": "2026-11-04",
-   "last_value": 6.413,
-   "n": 891,
+   "last_date": "2026-11-05",
+   "last_value": 6.4135,
+   "n": 892,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 0.423
+   "prev_date": "2026-11-04",
+   "change_pct": 0.008
   },
   {
    "kind": "etf",
@@ -900,12 +900,12 @@
    "added": 1,
    "revisions": [],
    "first": "2009-01-02",
-   "last_date": "2026-11-04",
-   "last_value": 18.745,
-   "n": 4506,
+   "last_date": "2026-11-05",
+   "last_value": 18.74,
+   "n": 4507,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 1.544
+   "prev_date": "2026-11-04",
+   "change_pct": -0.027
   },
   {
    "kind": "etf",
@@ -922,12 +922,12 @@
    "added": 1,
    "revisions": [],
    "first": "2017-06-14",
-   "last_date": "2026-11-04",
-   "last_value": 70.0,
-   "n": 2373,
+   "last_date": "2026-11-05",
+   "last_value": 71.57,
+   "n": 2374,
    "age_days": 2,
-   "prev_date": "2026-11-03",
-   "change_pct": 5.9
+   "prev_date": "2026-11-04",
+   "change_pct": 2.243
   },
   {
    "kind": "rate",
@@ -938,13 +938,13 @@
    "code": "IUDBEDR",
    "flags": [],
    "status": "ok",
-   "added": 2,
+   "added": 0,
    "revisions": [],
    "first": "2000-01-04",
    "last_date": "2026-11-05",
    "last_value": 4.0,
    "n": 6784,
-   "age_days": 1,
+   "age_days": 2,
    "prev_date": "2026-11-04",
    "change_bp": 25.0
   },
@@ -960,12 +960,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-03",
-   "last_value": 5.2098,
-   "n": 6782,
+   "last_date": "2026-11-04",
+   "last_value": 5.1364,
+   "n": 6783,
    "age_days": 3,
-   "prev_date": "2026-11-02",
-   "change_bp": 4.2
+   "prev_date": "2026-11-03",
+   "change_bp": -7.3
   },
   {
    "kind": "rate",
@@ -979,12 +979,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-03",
-   "last_value": 4.8554,
-   "n": 6782,
+   "last_date": "2026-11-04",
+   "last_value": 4.7795,
+   "n": 6783,
    "age_days": 3,
-   "prev_date": "2026-11-02",
-   "change_bp": 3.9
+   "prev_date": "2026-11-03",
+   "change_bp": -7.6
   },
   {
    "kind": "rate",
@@ -998,12 +998,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-03",
-   "last_value": 5.5176,
-   "n": 6782,
+   "last_date": "2026-11-04",
+   "last_value": 5.4488,
+   "n": 6783,
    "age_days": 3,
-   "prev_date": "2026-11-02",
-   "change_bp": 4.6
+   "prev_date": "2026-11-03",
+   "change_bp": -6.9
   },
   {
    "kind": "rate",
@@ -1017,12 +1017,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-03",
-   "last_value": 1.3794,
-   "n": 6782,
+   "last_date": "2026-11-04",
+   "last_value": 1.3333,
+   "n": 6783,
    "age_days": 3,
-   "prev_date": "2026-11-02",
-   "change_bp": 6.1
+   "prev_date": "2026-11-03",
+   "change_bp": -4.6
   },
   {
    "kind": "rate",
@@ -1036,12 +1036,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-03",
-   "last_value": 1.982,
-   "n": 6782,
+   "last_date": "2026-11-04",
+   "last_value": 1.9114,
+   "n": 6783,
    "age_days": 3,
-   "prev_date": "2026-11-02",
-   "change_bp": 5.1
+   "prev_date": "2026-11-03",
+   "change_bp": -7.1
   },
   {
    "kind": "rate",
@@ -1055,12 +1055,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-04",
-   "last_date": "2026-11-03",
-   "last_value": 2.4402,
-   "n": 6782,
+   "last_date": "2026-11-04",
+   "last_value": 2.3693,
+   "n": 6783,
    "age_days": 3,
-   "prev_date": "2026-11-02",
-   "change_bp": 4.9
+   "prev_date": "2026-11-03",
+   "change_bp": -7.1
   },
   {
    "kind": "rate",
@@ -1074,12 +1074,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-03",
-   "last_date": "2026-11-05",
-   "last_value": 4.84,
-   "n": 6715,
+   "last_date": "2026-11-06",
+   "last_value": 4.86,
+   "n": 6716,
    "age_days": 1,
-   "prev_date": "2026-11-04",
-   "change_bp": -6.0
+   "prev_date": "2026-11-05",
+   "change_bp": 2.0
   },
   {
    "kind": "rate",
@@ -1093,12 +1093,12 @@
    "added": 1,
    "revisions": [],
    "first": "2000-01-03",
-   "last_date": "2026-11-05",
-   "last_value": 4.46,
-   "n": 6715,
+   "last_date": "2026-11-06",
+   "last_value": 4.51,
+   "n": 6716,
    "age_days": 1,
-   "prev_date": "2026-11-04",
-   "change_bp": -12.0
+   "prev_date": "2026-11-05",
+   "change_bp": 5.0
   }
  ]
 }
