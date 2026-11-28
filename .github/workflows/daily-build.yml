@@ -12,6 +12,13 @@ name: Daily build
 on:
   schedule:
     - cron: '30 21 * * 1-5'
+    # Added 28 Nov 2026 (Zarqa's ruling): GitHub runs the 21:30 slot hours late, at about
+    # 01:30-05:30 UK, before Yahoo has posted the previous day's London close, so the page sat
+    # two working days behind. These morning runs (Tue-Sat, after Yahoo has caught up) bring
+    # in the previous weekday's close; the Saturday ones bring in Friday's for the weekend.
+    # A run with nothing new commits nothing, so extra runs are harmless.
+    - cron: '30 7 * * 2-6'
+    - cron: '30 10 * * 2-6'
   workflow_dispatch:
 
 permissions:
